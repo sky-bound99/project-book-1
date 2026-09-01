@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 1: Computer Fundamentals</title>
+    <title>Chapter 2: Number System and Logic Gates</title>
 </head>
 <body style="font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; color: #1a1a1a; line-height: 1.6;">
 
     <!-- Navigation Link -->
     <div style="text-align: center; margin-bottom: 20px;">
-        <a href="tableofcontents.html" style="color: #003366; font-weight: bold; text-decoration: none;">&laquo; Back to Table of Contents</a>
+        <a href="TableofContents.html" style="color: #003366; font-weight: bold; text-decoration: none;">&laquo; Back to Table of Contents</a>
     </div>
 
     <!-- Main Container -->
@@ -17,302 +17,431 @@
 
         <!-- Header Banner -->
         <div style="background-color: #003366; color: #ffffff; text-align: center; padding: 15px; border-radius: 4px;">
-            <h1 style="margin: 0; font-size: 28px;">CHAPTER 1</h1>
-            <p style="margin: 5px 0 0 0; font-size: 18px; font-style: italic;">Introduction to Computers and Computer Systems</p>
+            <h1 style="margin: 0; font-size: 28px;">CHAPTER 2</h1>
+            <p style="margin: 5px 0 0 0; font-size: 18px; font-style: italic;">Number System, Boolean Algebra, and Digital Logic</p>
         </div>
 
         <br>
 
-        <!-- Section 1.1 -->
+        <!-- Section 2.1 -->
         <div style="border-left: 4px solid #003366; padding-left: 15px; margin-bottom: 30px;">
-            <h2 style="color: #003366; border-bottom: 2px solid #003366; padding-bottom: 5px;">1.1 Introduction of Computer</h2>
-            <p>A computer is an advanced electronic device that accepts raw data as input, stores and processes that data according to a set of programmed instructions, and produces meaningful information as output. Modern society relies heavily on computing infrastructure for everything from global telecommunications to desktop automation.</p>
+            <h2 style="color: #003366; border-bottom: 2px solid #003366; padding-bottom: 5px;">2.1 Number System and Conversion</h2>
+            <p>A number system is a mathematical framework used to represent, count, and perform arithmetic operations on quantitative values. In computer systems, positional number systems are utilized where the value of a digit depends on its position within a number, determined by the base or radix ($r$) of the system. The total number of unique digits available in a number system defines its radix.</p>
 
-            <h3 style="color: #003366;">1.1.1 Definition, Characteristics, and Applications of Computer</h3>
-            <p>At its foundation, a computer functions under the <strong>Input-Process-Output (IPO)</strong> model. Raw data (facts, numbers, symbols) enters the machine, undergoes algorithmic manipulation in the central processor, and is converted into structured information usable by humans or other automated systems.</p>
+            <h3 style="color: #003366;">2.1.1 Decimal, Binary, Octal, Hexadecimal Number System &amp; Conversion</h3>
 
-            <h4 style="color: #333333;">Core Characteristics of Computers:</h4>
+            <p><strong>1. Decimal Number System (Base-10):</strong><br>
+            The standard number system used by humans. It uses ten unique symbols: $0, 1, 2, 3, 4, 5, 6, 7, 8, 9$. The positional values are powers of 10 ($10^0, 10^1, 10^2, \dots$).<br>
+            <em>Example:</em> $(254)_{10} = 2 \times 10^2 + 5 \times 10^1 + 4 \times 10^0 = 200 + 50 + 4 = 254$.</p>
+
+            <p><strong>2. Binary Number System (Base-2):</strong><br>
+            The fundamental language of digital computers. It uses only two digits: $0$ (LOW/OFF) and $1$ (HIGH/ON). The positional weights are powers of 2 ($2^0, 2^1, 2^2, \dots$).<br>
+            <em>Example:</em> $(1101)_2 = 1 \times 2^3 + 1 \times 2^2 + 0 \times 2^1 + 1 \times 2^0 = 8 + 4 + 0 + 1 = (13)_{10}$.</p>
+
+            <p><strong>3. Octal Number System (Base-8):</strong><br>
+            Uses eight unique digits: $0, 1, 2, 3, 4, 5, 6, 7$. Positional weights are powers of 8 ($8^0, 8^1, 8^2, \dots$). Each octal digit directly represents a 3-bit binary group ($2^3 = 8$).<br>
+            <em>Example:</em> $(357)_8 = 3 \times 8^2 + 5 \times 8^1 + 7 \times 8^0 = 192 + 40 + 7 = (239)_{10}$.</p>
+
+            <p><strong>4. Hexadecimal Number System (Base-16):</strong><br>
+            Uses sixteen unique symbols: $0, 1, 2, 3, 4, 5, 6, 7, 8, 9$ and letters $A, B, C, D, E, F$ (where $A=10, B=11, C=12, D=13, E=14, F=15$). Positional weights are powers of 16 ($16^0, 16^1, 16^2, \dots$). Each hexadecimal digit represents a 4-bit binary group ($2^4 = 16$).<br>
+            <em>Example:</em> $(1AF)_{16} = 1 \times 16^2 + 10 \times 16^1 + 15 \times 16^0 = 256 + 160 + 15 = (431)_{10}$.</p>
+
+            <hr style="border: 0; height: 1px; background-color: #cccccc; margin: 20px 0;">
+
+            <h4 style="color: #333333;">Number System Conversion Protocols with Step-by-Step Examples</h4>
+
+            <p><strong>Type A: Decimal to Any Base (Binary, Octal, Hexadecimal)</strong><br>
+            <em>Rule:</em> Divide the integer part of the decimal number repeatedly by the target base ($r$) and record the remainders from bottom to top (Least Significant Bit to Most Significant Bit).</p>
+
+            <p><strong>Example 1: Convert Decimal $(45)_{10}$ to Binary $(?)_2$</strong></p>
             <ul>
-                <li><strong>Speed:</strong> Computers perform calculations in fractions of a second (nanoseconds and picoseconds). For example, a modern multi-GHz processor executes billions of instructions per second.</li>
-                <li><strong>Accuracy:</strong> Computers execute tasks with high precision. Errors generally stem from human programming mistakes or incorrect input data (known as <em>Garbage In, Garbage Out</em> or <strong>GIGO</strong>).</li>
-                <li><strong>Diligence:</strong> Unlike humans, computers do not suffer from physical tiredness, lack of concentration, or boredom. A computer can run repetitive tasks continuously for long durations without degrading operational performance.</li>
-                <li><strong>Versatility:</strong> A single computer system can perform vastly different tasks sequentially or simultaneously—ranging from typing a text document to rendering 3D graphics or analyzing weather patterns.</li>
-                <li><strong>Storage Capacity:</strong> Computers store massive volumes of data in compact spaces, using primary volatile memory and non-volatile secondary storage media for quick retrieval.</li>
-                <li><strong>Automation:</strong> Once a program is loaded into memory, a computer can execute its instructions sequentially without requiring manual human intervention at every step.</li>
+                <li>$45 \div 2 = 22$, Remainder = <strong>1</strong> (LSB)</li>
+                <li>$22 \div 2 = 11$, Remainder = <strong>0</strong></li>
+                <li>$11 \div 2 = 5$, Remainder = <strong>1</strong></li>
+                <li>$5 \div 2 = 2$, Remainder = <strong>1</strong></li>
+                <li>$2 \div 2 = 1$, Remainder = <strong>0</strong></li>
+                <li>$1 \div 2 = 0$, Remainder = <strong>1</strong> (MSB)</li>
             </ul>
+            <p>Reading remainders bottom-to-top: <strong>$(45)_{10} = (101101)_2$</strong>.</p>
 
-            <h4 style="color: #333333;">Key Application Domains:</h4>
+            <p><strong>Example 2: Convert Decimal $(175)_{10}$ to Octal $(?)_8$</strong></p>
             <ul>
-                <li><strong>Education:</strong> Powering E-learning platforms, virtual classrooms, digital libraries, and academic research database tools.</li>
-                <li><strong>Healthcare:</strong> Operating diagnostic imaging equipment (CT scanners, MRI machines), patient monitoring software, and electronic medical health records.</li>
-                <li><strong>Banking &amp; Finance:</strong> Managing Core Banking Systems (CBS), handling global electronic fund transfers (SWIFT), running Automated Teller Machines (ATMs), and executing algorithmic stock trading.</li>
-                <li><strong>Science &amp; Engineering:</strong> Running Computer-Aided Design (CAD) software for architectural modeling, space exploration simulations, and molecular biology analysis.</li>
-                <li><strong>Business &amp; Industry:</strong> Automating Enterprise Resource Planning (ERP), inventory management, digital point-of-sale billing, and corporate payroll processing.</li>
+                <li>$175 \div 8 = 21$, Remainder = <strong>7</strong> (LSB)</li>
+                <li>$21 \div 8 = 2$, Remainder = <b>5</b></li>
+                <li>$2 \div 8 = 0$, Remainder = <b>2</b> (MSB)</li>
+            </ul>
+            <p>Reading remainders bottom-to-top: <strong>$(175)_{10} = (257)_8$</strong>.</p>
+
+            <p><strong>Example 3: Convert Decimal $(957)_{10}$ to Hexadecimal $(?)_{16}$</strong></p>
+            <ul>
+                <li>$957 \div 16 = 59$, Remainder = <strong>13</strong> (which is <strong>D</strong>)</li>
+                <li>$59 \div 16 = 3$, Remainder = <strong>11</strong> (which is <strong>B</strong>)</li>
+                <li>$3 \div 16 = 0$, Remainder = <strong>3</strong></li>
+            </ul>
+            <p>Reading remainders bottom-to-top: <strong>$(957)_{10} = (3BD)_{16}$</strong>.</p>
+
+            <p><strong>Type B: Any Base to Decimal</strong><br>
+            <em>Rule:</em> Multiply each digit by its positional weight ($r^n$) and sum all the products.</p>
+
+            <p><strong>Example 4: Convert Binary $(11011)_2$ to Decimal $(?)_{10}$</strong><br>
+            $= (1 \times 2^4) + (1 \times 2^3) + (0 \times 2^2) + (1 \times 2^1) + (1 \times 2^0)$<br>
+            $= 16 + 8 + 0 + 2 + 1 = \mathbf{(27)_{10}}$</p>
+
+            <p><strong>Example 5: Convert Hexadecimal $(2C5)_{16}$ to Decimal $(?)_{10}$</strong><br>
+            $= (2 \times 16^2) + (12 \times 16^1) + (5 \times 16^0)$<br>
+            $= (2 \times 256) + (12 \times 16) + (5 \times 1)$<br>
+            $= 512 + 192 + 5 = \mathbf{(709)_{10}}$</p>
+
+            <p><strong>Type C: Direct Binary to Octal &amp; Hexadecimal Shortcuts</strong></p>
+            <ul>
+                <li><strong>Binary to Octal:</strong> Group binary digits into sets of 3 from right to left, then convert each group to its single octal digit equivalent.<br>
+                <em>Example:</em> $(11010111)_2 \rightarrow (011)(010)(111)_2 = \mathbf{(327)_8}$.</li>
+                <br>
+                <li><strong>Binary to Hexadecimal:</strong> Group binary digits into sets of 4 from right to left, then convert each group to its hexadecimal equivalent.<br>
+                <em>Example:</em> $(11010111)_2 \rightarrow (1101)(0111)_2 = (13)(7) = \mathbf{(D7)_{16}}$.</li>
             </ul>
 
             <hr style="border: 0; height: 1px; background-color: #cccccc; margin: 20px 0;">
 
-            <h3 style="color: #003366;">1.1.2 Evolution of Computer Technology</h3>
-            <p>The history of computing spans thousands of years, starting with mechanical counting tools like the Abacus (developed around 2500 BCE) and progressing through mechanical calculators like Blaise Pascal's <em>Pascaline</em> (1642) and Charles Babbage's <em>Difference Engine</em> and <em>Analytical Engine</em> in the 19th century. Babbage's Analytical Engine introduced concepts of input, processing, memory, and output, earning him the title of the <strong>"Father of Computing."</strong></p>
+            <h3 style="color: #003366;">2.1.2 Calculation in Binary Addition and Subtraction</h3>
+            <p>Binary arithmetic forms the hardware basis for all processing in the Arithmetic Logic Unit (ALU).</p>
 
-            <p>Modern electronic computing is divided into five distinct generations based on underlying hardware technology:</p>
+            <h4 style="color: #333333;">Rules of Binary Addition:</h4>
+            <ul>
+                <li>$0 + 0 = 0$ (Sum = 0, Carry = 0)</li>
+                <li>$0 + 1 = 1$ (Sum = 1, Carry = 0)</li>
+                <li>$1 + 0 = 1$ (Sum = 1, Carry = 0)</li>
+                <li>$1 + 1 = 0$ with Carry of <strong>1</strong> ($10_2 = 2_{10}$)</li>
+                <li>$1 + 1 + 1 = 1$ with Carry of <strong>1</strong> ($11_2 = 3_{10}$)</li>
+            </ul>
 
-            <!-- Generations Table -->
-            <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; border-collapse: collapse; margin-top: 15px; border: 1px solid #cccccc;">
+            <p><strong>Example of Binary Addition: Add $(1011)_2$ and $(1101)_2$</strong></p>
+            <pre style="background-color: #f9f9f9; padding: 10px; border-left: 3px solid #003366; font-family: monospace;">
+    1 1 1     (Carries)
+      1 0 1 1  (11 in decimal)
+    + 1 1 0 1  (13 in decimal)
+    ----------
+    1 1 0 0 0  (24 in decimal)
+            </pre>
+
+            <h4 style="color: #333333;">Rules of Direct Binary Subtraction (Borrow Method):</h4>
+            <ul>
+                <li>$0 - 0 = 0$</li>
+                <li>$1 - 0 = 1$</li>
+                <li>$1 - 1 = 0$</li>
+                <li>$0 - 1 = 1$ with a Borrow of 1 from the next higher position (making it $10_2 - 1 = 1$)</li>
+            </ul>
+
+            <p><strong>Example of Direct Binary Subtraction: Subtract $(0110)_2$ from $(1101)_2$</strong></p>
+            <pre style="background-color: #f9f9f9; padding: 10px; border-left: 3px solid #003366; font-family: monospace;">
+      1 1 0 1  (13 in decimal)
+    - 0 1 1 0  (6 in decimal)
+    ----------
+      0 1 1 1  (7 in decimal)
+            </pre>
+
+            <hr style="border: 0; height: 1px; background-color: #cccccc; margin: 20px 0;">
+
+            <h3 style="color: #003366;">2.1.3 One’s and Two’s Complement Methods of Binary Subtraction</h3>
+            <p>In digital circuitry, implementing separate hardware circuits for addition and subtraction is inefficient. Complement arithmetic allows computer systems to perform binary subtraction using standard adder circuits.</p>
+
+            <h4 style="color: #333333;">1. One's Complement Method</h4>
+            <p>The 1's complement of a binary number is obtained by bitwise inversion: replacing every $0$ with a $1$ and every $1$ with a $0$.</p>
+
+            <p><strong>Subtraction Steps ($A - B$ using 1's Complement):</strong></p>
+            <ol>
+                <li>Find the 1's complement of the subtrahend ($B$). Ensure both numbers have equal bit lengths.</li>
+                <li>Add the 1's complement of $B$ to the minuend ($A$).</li>
+                <li>Check for an end-around carry bit generated from the most significant bit:
+                    <ul>
+                        <li><strong>If a Carry occurs:</strong> Add the carry back to the LSB (End-Around Carry). The result is positive.</li>
+                        <li><strong>If NO Carry occurs:</strong> Take the 1's complement of the final sum and append a negative sign ($-$ step).</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <p><strong>Example (Case 1: Carry Generated): Perform $1101_2 - 0110_2$ ($13 - 6 = 7$) using 1's Complement</strong></p>
+            <ul>
+                <li>Minuend $A = 1101$, Subtrahend $B = 0110$.</li>
+                <li>1's Complement of $B (0110) = 1001$.</li>
+                <li>Add $A + (1's \text{ Comp of } B)$:
+                    <pre style="background-color: #f9f9f9; padding: 10px; border-left: 3px solid #003366; font-family: monospace;">
+        1 1 0 1
+      + 1 0 0 1
+      ---------
+     (1)0 0 1 0  --> End-around carry generated!
+                    </pre>
+                </li>
+                <li>Add the end-around carry to LSB: $0010 + 1 = \mathbf{0111_2 \text{ or } (+7)_{10}}$.</li>
+            </ul>
+
+            <h4 style="color: #333333;">2. Two's Complement Method</h4>
+            <p>The 2's complement of a binary number is obtained by adding $1$ to its 1's complement: $\text{2's Complement} = \text{1's Complement} + 1$.</p>
+
+            <p><strong>Subtraction Steps ($A - B$ using 2's Complement):</strong></p>
+            <ol>
+                <li>Find the 2's complement of the subtrahend ($B$).</li>
+                <li>Add the 2's complement of $B$ to the minuend ($A$).</li>
+                <li>Check for a carry bit from the MSB position:
+                    <ul>
+                        <li><strong>If a Carry occurs:</strong> Discard the carry bit completely. The remaining result is positive.</li>
+                        <li><strong>If NO Carry occurs:</strong> The result is negative. Take the 2's complement of the resulting sum to find its true absolute magnitude.</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <p><strong>Example (Case 1: Carry Generated): Perform $1100_2 - 0100_2$ ($12 - 4 = 8$) using 2's Complement</strong></p>
+            <ul>
+                <li>Minuend $A = 1100$, Subtrahend $B = 0100$.</li>
+                <li>1's Complement of $B = 1011$.</li>
+                <li>2's Complement of $B = 1011 + 1 = 1100$.</li>
+                <li>Add $A + (2's \text{ Comp of } B)$:
+                    <pre style="background-color: #f9f9f9; padding: 10px; border-left: 3px solid #003366; font-family: monospace;">
+        1 1 0 0
+      + 1 1 0 0
+      ---------
+     (1)1 0 0 0  --> Discard the carry bit (1)!
+                    </pre>
+                </li>
+                <li>Final Result: $\mathbf{1000_2 \text{ or } (+8)_{10}}$.</li>
+            </ul>
+        </div>
+
+        <!-- Section 2.2 -->
+        <div style="border-left: 4px solid #003366; padding-left: 15px; margin-bottom: 20px;">
+            <h2 style="color: #003366; border-bottom: 2px solid #003366; padding-bottom: 5px;">2.2 Logic Function and Boolean Algebra</h2>
+
+            <h3 style="color: #003366;">2.2.1 Introduction to Boolean Algebra</h3>
+            <p>Boolean Algebra is a branch of mathematics introduced by English mathematician George Boole in 1854. Unlike elementary algebra, where variables represent real numbers, Boolean algebra works exclusively with two binary logic states: <strong>TRUE (1)</strong> and <strong>FALSE (0)</strong>. It provides the mathematical foundation for analyzing, designing, and simplifying digital logic circuits and computer processor architectures.</p>
+
+            <hr style="border: 0; height: 1px; background-color: #cccccc; margin: 20px 0;">
+
+            <h3 style="color: #003366;">2.2.2 Introduction to Boolean Values, Truth Table, Boolean Expression, and Boolean Function</h3>
+            <ul>
+                <li><strong>Boolean Values:</strong> The binary variables that take on one of two discrete values: $1$ (Logic HIGH, VCC, True) or $0$ (Logic LOW, Ground, False).</li>
+                <li><strong>Truth Table:</strong> A structured mathematical table listing every possible binary combination of input variables alongside the resulting output state of the logical system. For $n$ binary variables, a truth table contains $2^n$ distinct input rows.</li>
+                <li><strong>Boolean Expression:</strong> An algebraic statement formed using binary variables and logical operators (such as $\text{AND} (\cdot)$, $\text{OR} (+)$, and $\text{NOT} (\overline{A})$). Example: $Y = A \cdot B + \overline{C}$.</li>
+                <li><strong>Boolean Function:</strong> A mapping relationship defined by a Boolean expression that transforms input binary variables into a single output binary state. Example: $F(A, B, C) = (A + B) \cdot \overline{C}$.</li>
+            </ul>
+
+            <hr style="border: 0; height: 1px; background-color: #cccccc; margin: 20px 0;">
+
+            <h3 style="color: #003366;">2.2.3 Logic Gates</h3>
+            <p>Logic gates are the physical building blocks of digital electronic circuits. They accept one or more binary input signals and produce a single binary output signal based on specific logical rules.</p>
+
+            <h4 style="color: #333333;">1. AND Gate</h4>
+            <p>Produces a HIGH output ($1$) if and only if <strong>all</strong> of its inputs are HIGH ($1$).</p>
+            <p><strong>Logic Expression:</strong> $Y = A \cdot B$ (or simply $AB$)</p>
+            <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; border-collapse: collapse; margin-top: 10px; border: 1px solid #cccccc; margin-bottom: 20px;">
                 <tr style="background-color: #003366; color: #ffffff;">
-                    <th style="padding: 10px; text-align: left;">Generation</th>
-                    <th style="padding: 10px; text-align: left;">Hardware Technology &amp; Key Features</th>
-                    <th style="padding: 10px; text-align: left;">Examples</th>
+                    <th style="padding: 10px; text-align: left;">A</th>
+                    <th style="padding: 10px; text-align: left;">B</th>
+                    <th style="padding: 10px; text-align: left;">Output ($Y = A \cdot B$)</th>
                 </tr>
-                <tr style="background-color: #f9f9f9;">
-                    <td><strong>First Generation</strong><br>(1940–1956)</td>
-                    <td><strong>Vacuum Tubes:</strong> Utilized fragile, heat-producing glass vacuum tubes for circuitry and magnetic drums for memory. Massive size, huge electricity consumption, programmed in machine language.</td>
-                    <td>ENIAC, UNIVAC-I, EDVAC</td>
+                <tr style="background-color: #f9f9f9;"><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>0</td><td>1</td><td>0</td></tr>
+                <tr style="background-color: #f9f9f9;"><td>1</td><td>0</td><td>0</td></tr>
+                <tr><td>1</td><td>1</td><td>1</td></tr>
+            </table>
+
+            <h4 style="color: #333333;">2. OR Gate</h4>
+            <p>Produces a HIGH output ($1$) if <strong>at least one</strong> of its inputs is HIGH ($1$).</p>
+            <p><strong>Logic Expression:</strong> $Y = A + B$</p>
+            <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; border-collapse: collapse; margin-top: 10px; border: 1px solid #cccccc; margin-bottom: 20px;">
+                <tr style="background-color: #003366; color: #ffffff;">
+                    <th style="padding: 10px; text-align: left;">A</th>
+                    <th style="padding: 10px; text-align: left;">B</th>
+                    <th style="padding: 10px; text-align: left;">Output ($Y = A + B$)</th>
                 </tr>
-                <tr>
-                    <td><strong>Second Generation</strong><br>(1956–1963)</td>
-                    <td><strong>Transistors:</strong> Replaced vacuum tubes with solid-state semiconductor transistors. Reduced size, lowered power consumption, increased speeds. Introduced Assembly language, FORTRAN, and COBOL.</td>
-                    <td>IBM 7094, CDC 1604, UNIVAC 1107</td>
+                <tr style="background-color: #f9f9f9;"><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>0</td><td>1</td><td>1</td></tr>
+                <tr style="background-color: #f9f9f9;"><td>1</td><td>0</td><td>1</td></tr>
+                <tr><td>1</td><td>1</td><td>1</td></tr>
+            </table>
+
+            <h4 style="color: #333333;">3. NOT Gate (Inverter)</h4>
+            <p>A single-input logic gate that reverses or complements the input logic state.</p>
+            <p><strong>Logic Expression:</strong> $Y = \overline{A}$ or $A'$</p>
+            <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; border-collapse: collapse; margin-top: 10px; border: 1px solid #cccccc; margin-bottom: 20px;">
+                <tr style="background-color: #003366; color: #ffffff;">
+                    <th style="padding: 10px; text-align: left;">A</th>
+                    <th style="padding: 10px; text-align: left;">Output ($Y = \overline{A}$)</th>
                 </tr>
-                <tr style="background-color: #f9f9f9;">
-                    <td><strong>Third Generation</strong><br>(1964–1971)</td>
-                    <td><strong>Integrated Circuits (ICs):</strong> Combined hundreds of microscopic transistors onto a single silicon chip. Boosted speed, lowered costs. Introduced keyboards, monitors, and early operating systems.</td>
-                    <td>IBM System/360, PDP-8, Honeywell-6000</td>
+                <tr style="background-color: #f9f9f9;"><td>0</td><td>1</td></tr>
+                <tr><td>1</td><td>0</td></tr>
+            </table>
+
+            <h4 style="color: #333333;">4. NAND Gate (Universal Gate)</h4>
+            <p>A combination of an AND gate followed by a NOT gate. Produces a LOW output ($0$) only when all inputs are HIGH ($1$).</p>
+            <p><strong>Logic Expression:</strong> $Y = \overline{A \cdot B}$</p>
+            <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; border-collapse: collapse; margin-top: 10px; border: 1px solid #cccccc; margin-bottom: 20px;">
+                <tr style="background-color: #003366; color: #ffffff;">
+                    <th style="padding: 10px; text-align: left;">A</th>
+                    <th style="padding: 10px; text-align: left;">B</th>
+                    <th style="padding: 10px; text-align: left;">Output ($Y = \overline{A \cdot B}$)</th>
                 </tr>
-                <tr>
-                    <td><strong>Fourth Generation</strong><br>(1971–Present)</td>
-                    <td><strong>Microprocessors (VLSI / ULSI):</strong> Placed millions/billions of transistors onto a single microchip (CPU). Launched personal computers (PCs), laptops, and mobile devices.</td>
-                    <td>Intel 8086/Pentium, Apple M-series, PCs</td>
+                <tr style="background-color: #f9f9f9;"><td>0</td><td>0</td><td>1</td></tr>
+                <tr><td>0</td><td>1</td><td>1</td></tr>
+                <tr style="background-color: #f9f9f9;"><td>1</td><td>0</td><td>1</td></tr>
+                <tr><td>1</td><td>1</td><td>0</td></tr>
+            </table>
+
+            <h4 style="color: #333333;">5. NOR Gate (Universal Gate)</h4>
+            <p>A combination of an OR gate followed by a NOT gate. Produces a HIGH output ($1$) only when all inputs are LOW ($0$).</p>
+            <p><strong>Logic Expression:</strong> $Y = \overline{A + B}$</p>
+            <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; border-collapse: collapse; margin-top: 10px; border: 1px solid #cccccc; margin-bottom: 20px;">
+                <tr style="background-color: #003366; color: #ffffff;">
+                    <th style="padding: 10px; text-align: left;">A</th>
+                    <th style="padding: 10px; text-align: left;">B</th>
+                    <th style="padding: 10px; text-align: left;">Output ($Y = \overline{A + B}$)</th>
                 </tr>
-                <tr style="background-color: #f9f9f9;">
-                    <td><strong>Fifth Generation</strong><br>(Present &amp; Beyond)</td>
-                    <td><strong>AI &amp; Quantum Computing:</strong> Parallel processing, neural networks, machine learning, natural language processing. Focuses on self-learning, pattern recognition, and autonomous decisions.</td>
-                    <td>AI supercomputer clusters, Quantum processors (Sycamore), Robotics</td>
+                <tr style="background-color: #f9f9f9;"><td>0</td><td>0</td><td>1</td></tr>
+                <tr><td>0</td><td>1</td><td>0</td></tr>
+                <tr style="background-color: #f9f9f9;"><td>1</td><td>0</td><td>0</td></tr>
+                <tr><td>1</td><td>1</td><td>0</td></tr>
+            </table>
+
+            <h4 style="color: #333333;">6. XOR Gate (Exclusive-OR)</h4>
+            <p>Produces a HIGH output ($1$) when the inputs are <strong>different</strong>, and a LOW output ($0$) when the inputs are identical.</p>
+            <p><strong>Logic Expression:</strong> $Y = A \oplus B = A\overline{B} + \overline{A}B$</p>
+            <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; border-collapse: collapse; margin-top: 10px; border: 1px solid #cccccc; margin-bottom: 20px;">
+                <tr style="background-color: #003366; color: #ffffff;">
+                    <th style="padding: 10px; text-align: left;">A</th>
+                    <th style="padding: 10px; text-align: left;">B</th>
+                    <th style="padding: 10px; text-align: left;">Output ($Y = A \oplus B$)</th>
                 </tr>
+                <tr style="background-color: #f9f9f9;"><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>0</td><td>1</td><td>1</td></tr>
+                <tr style="background-color: #f9f9f9;"><td>1</td><td>0</td><td>1</td></tr>
+                <tr><td>1</td><td>1</td><td>0</td></tr>
+            </table>
+
+            <h4 style="color: #333333;">7. XNOR Gate (Exclusive-NOR)</h4>
+            <p>A combination of an XOR gate followed by an inverter. Produces a HIGH output ($1$) when inputs are <strong>identical</strong>.</p>
+            <p><strong>Logic Expression:</strong> $Y = \overline{A \oplus B} = AB + \overline{A}\overline{B}$</p>
+            <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; border-collapse: collapse; margin-top: 10px; border: 1px solid #cccccc; margin-bottom: 20px;">
+                <tr style="background-color: #003366; color: #ffffff;">
+                    <th style="padding: 10px; text-align: left;">A</th>
+                    <th style="padding: 10px; text-align: left;">B</th>
+                    <th style="padding: 10px; text-align: left;">Output ($Y = \overline{A \oplus B}$)</th>
+                </tr>
+                <tr style="background-color: #f9f9f9;"><td>0</td><td>0</td><td>1</td></tr>
+                <tr><td>0</td><td>1</td><td>0</td></tr>
+                <tr style="background-color: #f9f9f9;"><td>1</td><td>0</td><td>0</td></tr>
+                <tr><td>1</td><td>1</td><td>1</td></tr>
             </table>
 
             <hr style="border: 0; height: 1px; background-color: #cccccc; margin: 20px 0;">
 
-            <h3 style="color: #003366;">1.1.3 Measurement Unit of Processing Speed and Storage Unit</h3>
-            <p>To evaluate system performance and capacity, computing relies on standardized metric units for data storage and execution speed.</p>
+            <h3 style="color: #003366;">2.2.4 Laws of Boolean Algebra</h3>
+            <p>Boolean algebra relies on fundamental rules and identities used to simplify complex logical expressions, reducing the number of physical logic gates required in a circuit design.</p>
 
-            <h4 style="color: #333333;">Storage Measurement Units:</h4>
-            <p>The basic unit of digital data is a <strong>Bit</strong> (Binary Digit), representing a single binary state of 0 or 1. Data storage scales upward in standardized byte multiples:</p>
             <ul>
-                <li><strong>1 Nibble</strong> = 4 bits</li>
-                <li><strong>1 Byte (B)</strong> = 8 bits (stores a single ASCII text character)</li>
-                <li><strong>1 Kilobyte (KB)</strong> = 1,024 Bytes (2<sup>10</sup> Bytes)</li>
-                <li><strong>1 Megabyte (MB)</strong> = 1,024 KB (2<sup>20</sup> Bytes)</li>
-                <li><strong>1 Gigabyte (GB)</strong> = 1,024 MB (2<sup>30</sup> Bytes)</li>
-                <li><strong>1 Terabyte (TB)</strong> = 1,024 GB (2<sup>40</sup> Bytes)</li>
-                <li><strong>1 Petabyte (PB)</strong> = 1,024 TB (2<sup>50</sup> Bytes)</li>
-                <li><strong>1 Exabyte (EB)</strong> = 1,024 PB (2<sup>60</sup> Bytes)</li>
-            </ul>
-
-            <h4 style="color: #333333;">Processing Speed Measurement Units:</h4>
-            <p>Processor execution rates were historically measured in instructions per second: <strong>MIPS</strong> (Millions of Instructions Per Second) or <strong>FLOPS</strong> (Floating-Point Operations Per Second). Modern CPU speed is primarily measured by internal clock frequency in <strong>Hertz (Hz)</strong>:</p>
-            <ul>
-                <li><strong>Megahertz (MHz):</strong> Millions of clock cycles per second.</li>
-                <li><strong>Gigahertz (GHz):</strong> Billions of clock cycles per second (e.g., a 3.5 GHz CPU completes 3.5 &times; 10<sup>9</sup> cycles per second).</li>
-            </ul>
-
-            <hr style="border: 0; height: 1px; background-color: #cccccc; margin: 20px 0;">
-
-            <h3 style="color: #003366;">1.1.4 Super, Mainframe, Mini, and Microcomputers</h3>
-            <p>Computers are categorized into four major classes based on processing capacity, physical size, cost, and deployment scenarios:</p>
-            
-            <ul>
-                <li><strong>Supercomputers:</strong> The fastest, largest, and most expensive computers available. Supercomputers use thousands of interconnected parallel processors to solve complex, compute-heavy scientific problems (measured in Petaflops or Exaflops).
-                    <br><em>Examples:</em> Frontier, Fugaku, Summit.
-                    <br><em>Use Cases:</em> Climate simulation, nuclear physics modeling, global weather forecasting.
-                </li>
-                <br>
-                <li><strong>Mainframe Computers:</strong> High-performance enterprise computers designed to process massive volumes of concurrent transactions and input/output requests reliably.
-                    <br><em>Examples:</em> IBM zSeries (z16), UNISYS ClearPath.
-                    <br><em>Use Cases:</em> Core banking transactions, airline reservations, national census processing.
-                </li>
-                <br>
-                <li><strong>Minicomputers (Midrange Computers):</strong> Multi-user systems scaled between personal microcomputers and mainframes, supporting dozens to hundreds of concurrent users.
-                    <br><em>Examples:</em> DEC VAX series, AS/400 (IBM System i).
-                    <br><em>Use Cases:</em> Industrial process automation, departmental databases.
-                </li>
-                <br>
-                <li><strong>Microcomputers:</strong> Single-user computers powered by a single microprocessor chip. Small, affordable, and common in everyday environments.
-                    <br><em>Examples:</em> Desktop PCs, Laptops, Workstations, Tablets.
-                    <br><em>Use Cases:</em> Document creation, web browsing, multimedia editing.
-                </li>
-            </ul>
-
-            <hr style="border: 0; height: 1px; background-color: #cccccc; margin: 20px 0;">
-
-            <h3 style="color: #003366;">1.1.5 Mobile Computing and its Applications</h3>
-            <p>Mobile computing is a technology framework that allows users to access, transmit, and process data wirelessly without being anchored to a fixed physical location. It combines mobile hardware, cellular/Wi-Fi networks, and specialized mobile operating systems.</p>
-
-            <h4 style="color: #333333;">Key Characteristics of Mobile Computing:</h4>
-            <ul>
-                <li><strong>Portability:</strong> Lightweight hardware designed to be carried easily by hand or worn on the body.</li>
-                <li><strong>Wireless Connectivity:</strong> Continuous network communication using radio frequencies without physical cables.</li>
-                <li><strong>Location Awareness:</strong> Integrated Global Positioning System (GPS) chips enable location-based services and navigation.</li>
-            </ul>
-
-            <h4 style="color: #333333;">Applications of Mobile Computing:</h4>
-            <ul>
-                <li><strong>Mobile Banking (M-Banking):</strong> Real-time digital fund transfers and balance inquiries via mobile wallet apps (e.g., eSewa, Khalti, Google Pay).</li>
-                <li><strong>Location-Based Navigation:</strong> On-demand transportation (e.g., Pathao, InDrive, Uber) and mapping services (e.g., Google Maps).</li>
-                <li><strong>Mobile Commerce (M-Commerce):</strong> Purchasing goods via mobile storefront apps (e.g., Daraz, Amazon).</li>
-                <li><strong>Remote Field Operations &amp; Telemedicine:</strong> On-site data capture, real-time reports, and medical video consultations.</li>
-            </ul>
-        </div>
-
-        <!-- Section 1.2 -->
-        <div style="border-left: 4px solid #003366; padding-left: 15px; margin-bottom: 20px;">
-            <h2 style="color: #003366; border-bottom: 2px solid #003366; padding-bottom: 5px;">1.2 Computer System and I/O Devices</h2>
-            <p>A computer system is an integrated assembly of hardware components and software applications designed to perform data processing tasks.</p>
-
-            <h3 style="color: #003366;">1.2.1 Concept of Computer Architecture and Organization</h3>
-            <ul>
-                <li><strong>Computer Architecture:</strong> Refers to the logical and functional attributes of a computer system visible to a programmer, including instruction sets (ISA), data types, and register configurations.
-                    <br><em>Example:</em> Deciding whether a processor uses an x86 or ARM instruction set.
-                </li>
-                <br>
-                <li><strong>Computer Organization:</strong> Refers to the operational hardware units and physical interconnections that implement architectural specifications, focusing on signal timings, bus structures, and circuit layouts.
-                    <br><em>Example:</em> Designing a specific 3.2 GHz circuit board with a 12 MB L3 cache to execute an ARM instruction set.
-                </li>
-            </ul>
-            <p>The baseline model for modern general-purpose computing is the <strong>Von Neumann Architecture</strong>, where program instructions and data reside together in a shared central memory space fetched sequentially by the central processor.</p>
-
-            <hr style="border: 0; height: 1px; background-color: #cccccc; margin: 20px 0;">
-
-            <h3 style="color: #003366;">1.2.2 Components of Computer System</h3>
-            <ul>
-                <li><strong>Input Unit:</strong> Captures external data/commands and converts them into binary machine signals.</li>
-                <li><strong>Output Unit:</strong> Translates processed binary data into human-readable text, graphics, sound, or physical actions.</li>
-                <li><strong>Processing Unit (CPU):</strong> Executes software instructions, performs operations, and coordinates data flow.</li>
-                <li><strong>Memory Unit (Primary Memory):</strong> High-speed internal semiconductor storage holding active code and data for quick access.</li>
-                <li><strong>Storage Unit (Secondary Memory):</strong> High-capacity non-volatile storage media designed to preserve data long-term.</li>
-            </ul>
-
-            <hr style="border: 0; height: 1px; background-color: #cccccc; margin: 20px 0;">
-
-            <h3 style="color: #003366;">1.2.3 Microprocessor: Basic Concepts, Clock Speed, Word Length, Components, and Functions</h3>
-            <p>A microprocessor is an integrated circuit built on a single semiconductor microchip that contains the complete Central Processing Unit (CPU).</p>
-
-            <h4 style="color: #333333;">Core Metrics:</h4>
-            <ul>
-                <li><strong>Clock Speed:</strong> Synchronizes internal execution steps (measured in GHz). Higher clock speeds mean more instruction steps per second.</li>
-                <li><strong>Word Length (Word Size):</strong> The maximum number of binary bits a microprocessor can process in a single parallel clock cycle (e.g., 32-bit vs. 64-bit).</li>
-            </ul>
-
-            <h4 style="color: #333333;">Primary Internal Components:</h4>
-            <ul>
-                <li><strong>Arithmetic Logic Unit (ALU):</strong> Performs arithmetic calculations (+, -, *) and logical comparisons (AND, OR, NOT).</li>
-                <li><strong>Control Unit (CU):</strong> Fetches instructions from main memory, decodes them into control signals, and directs data movement.</li>
-                <li><strong>Register Array:</strong> Small, high-speed internal storage locations used to hold temporary data values and memory addresses during active execution cycles.</li>
-            </ul>
-
-            <hr style="border: 0; height: 1px; background-color: #cccccc; margin: 20px 0;">
-
-            <h3 style="color: #003366;">1.2.4 Bus System: Data Bus, Address Bus, and Control Bus</h3>
-            <p>A bus system is a collection of parallel physical wires or circuit board traces used to transmit signals between the CPU, memory, and expansion units.</p>
-            <ul>
-                <li><strong>Data Bus (Bidirectional):</strong> Transfers actual binary data payload values back and forth between the CPU, RAM, and storage controllers.</li>
-                <li><strong>Address Bus (Unidirectional):</strong> Driven exclusively by the CPU to select specific physical memory address locations or I/O ports.</li>
-                <li><strong>Control Bus:</strong> Conveys command timing signals, system status checks, interrupt requests, and read/write execution commands.</li>
-            </ul>
-
-            <hr style="border: 0; height: 1px; background-color: #cccccc; margin: 20px 0;">
-
-            <h3 style="color: #003366;">1.2.5 Primary Memory: Definition, RAM, ROM, Cache, Buffer, Types of RAM and ROM</h3>
-            <p>Primary Memory refers to semiconductor storage accessible directly by the CPU via the internal system bus.</p>
-
-            <h4 style="color: #333333;">Random Access Memory (RAM) - Volatile:</h4>
-            <ul>
-                <li><strong>SRAM (Static RAM):</strong> Fast, uses flip-flop circuits, requires no refresh cycles, expensive; used in CPU cache memory.</li>
-                <li><strong>DRAM (Dynamic RAM):</strong> Uses transistor-capacitor pairs, requires periodic electrical refreshing; used for main memory modules (DDR4, DDR5).</li>
-            </ul>
-
-            <h4 style="color: #333333;">Read-Only Memory (ROM) - Non-Volatile:</h4>
-            <ul>
-                <li><strong>PROM (Programmable ROM):</strong> Blank ROM chips that can be programmed once using high voltage.</li>
-                <li><strong>EPROM (Erasable Programmable ROM):</strong> Contents can be erased using intense ultraviolet (UV) light.</li>
-                <li><strong>EEPROM (Electrically Erasable Programmable ROM):</strong> Modern non-volatile memory erased and rewritten electrically byte-by-byte (used in flash BIOS chips).</li>
-            </ul>
-
-            <h4 style="color: #333333;">Cache Memory &amp; Buffer:</h4>
-            <ul>
-                <li><strong>Cache Memory:</strong> Extremely fast SRAM situated close to or inside the CPU die (L1, L2, L3 caches) to store frequently accessed data.
-                    <br><em>Analogy:</em> Think of RAM as a bookshelf in your office, while Cache is the stack of papers sitting directly on your desk for immediate reference.
-                </li>
-                <br>
-                <li><strong>Data Buffer:</strong> Temporary block of physical memory reserved to hold data while transferring between devices operating at different speeds.</li>
-            </ul>
-
-            <hr style="border: 0; height: 1px; background-color: #cccccc; margin: 20px 0;">
-
-            <h3 style="color: #003366;">1.2.6 Secondary Memory</h3>
-            <ul>
-                <li><strong>Magnetic Disk (HDD):</strong> Rotating platters with magnetic coating. Offers high capacity at low cost, but sensitive to physical shock.</li>
-                <li><strong>Flash Memory (SSD):</strong> Solid-state non-volatile storage using floating-gate NAND circuits with no moving parts.</li>
-                <li><strong>Optical Disks:</strong> Circular plastic disks read by laser diodes.
+                <li><strong>Identity Laws:</strong>
                     <ul>
-                        <li><strong>CD:</strong> ~700 MB capacity</li>
-                        <li><strong>DVD:</strong> ~4.7 GB to 8.5 GB capacity</li>
-                        <li><strong>Blu-ray Disc (BD):</strong> 25 GB to 100+ GB capacity</li>
+                        <li>$A + 0 = A$</li>
+                        <li>$A \cdot 1 = A$</li>
                     </ul>
                 </li>
-                <li><strong>External Storage &amp; USB Flash Drives:</strong> Portable enclosures or thumb-sized flash memory drives connected via USB/Thunderbolt.</li>
+                <br>
+                <li><strong>Null (Annulment) Laws:</strong>
+                    <ul>
+                        <li>$A + 1 = 1$</li>
+                        <li>$A \cdot 0 = 0$</li>
+                    </ul>
+                </li>
+                <br>
+                <li><strong>Idempotent Laws:</strong>
+                    <ul>
+                        <li>$A + A = A$</li>
+                        <li>$A \cdot A = A$</li>
+                    </ul>
+                </li>
+                <br>
+                <li><strong>Complement Laws:</strong>
+                    <ul>
+                        <li>$A + \overline{A} = 1$</li>
+                        <li>$A \cdot \overline{A} = 0$</li>
+                        <li>$\overline{(\overline{A})} = A$ (Double Negation / Involution)</li>
+                    </ul>
+                </li>
+                <br>
+                <li><strong>Commutative Laws:</strong>
+                    <ul>
+                        <li>$A + B = B + A$ (OR operation is order-independent)</li>
+                        <li>$A \cdot B = B \cdot A$ (AND operation is order-independent)</li>
+                    </ul>
+                </li>
+                <br>
+                <li><strong>Associative Laws:</strong>
+                    <ul>
+                        <li>$(A + B) + C = A + (B + C)$</li>
+                        <li>$(A \cdot B) \cdot C = A \cdot (B \cdot C)$</li>
+                    </ul>
+                </li>
+                <br>
+                <li><strong>Distributive Laws:</strong>
+                    <ul>
+                        <li>$A \cdot (B + C) = (A \cdot B) + (A \cdot C)$</li>
+                        <li>$A + (B \cdot C) = (A + B) \cdot (A + C)$</li>
+                    </ul>
+                </li>
+                <br>
+                <li><strong>De Morgan's Theorems:</strong>
+                    <ul>
+                        <li><strong>First Law:</strong> $\overline{A \cdot B} = \overline{A} + \overline{B}$ (The complement of a product equals the sum of the complements)</li>
+                        <li><strong>Second Law:</strong> $\overline{A + B} = \overline{A} \cdot \overline{B}$ (The complement of a sum equals the product of the complements)</li>
+                    </ul>
+                </li>
             </ul>
 
             <hr style="border: 0; height: 1px; background-color: #cccccc; margin: 20px 0;">
 
-            <h3 style="color: #003366;">1.2.7 Input Devices</h3>
-            <p>Devices that convert human input or environmental data into binary signals:</p>
-            <ul>
-                <li><strong>Keyboard:</strong> Alphanumeric key matrix interface.</li>
-                <li><strong>Mouse:</strong> Hand-held pointing device with optical movement sensor.</li>
-                <li><strong>Scanner:</strong> Converts physical documents into bitmap image files.</li>
-                <li><strong>Light Pen:</strong> Light-sensitive stylus for detecting display screen positioning.</li>
-                <li><strong>OMR (Optical Mark Reader):</strong> Detects light reflection off marked paper areas (multiple-choice exams).</li>
-                <li><strong>OCR (Optical Character Recognition):</strong> Converts printed/handwritten text images into editable text files.</li>
-                <li><strong>BCR (Barcode Reader):</strong> Reads black-and-white optical barcode patterns.</li>
-                <li><strong>MICR (Magnetic Ink Character Recognition):</strong> Reads characters printed with magnetic iron-oxide ink (bank checks).</li>
-                <li><strong>Touch Screen:</strong> Displays overlaid with capacitive/resistive touch-sensing panels.</li>
-                <li><strong>Microphone:</strong> Acoustic transducer converting sound waves to digitized audio.</li>
-                <li><strong>Digital Camera:</strong> Focuses light onto electronic sensors (CCD/CMOS arrays) to record media.</li>
-            </ul>
+            <h3 style="color: #003366;">2.2.5 Statement and Verification of Laws of Boolean Algebra Using Truth Tables</h3>
 
-            <hr style="border: 0; height: 1px; background-color: #cccccc; margin: 20px 0;">
+            <h4 style="color: #333333;">Verification 1: Distributive Law $A + (B \cdot C) = (A + B) \cdot (A + C)$</h4>
+            <p>To verify this law, build a truth table for all $2^3 = 8$ combinations of $A, B, C$ and compare the output columns for LHS and RHS.</p>
 
-            <h3 style="color: #003366;">1.2.8 Output Devices</h3>
+            <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; border-collapse: collapse; margin-top: 15px; border: 1px solid #cccccc; margin-bottom: 15px;">
+                <tr style="background-color: #003366; color: #ffffff;">
+                    <th style="padding: 8px; text-align: left;">A</th>
+                    <th style="padding: 8px; text-align: left;">B</th>
+                    <th style="padding: 8px; text-align: left;">C</th>
+                    <th style="padding: 8px; text-align: left;">B · C</th>
+                    <th style="padding: 8px; text-align: left;">LHS: A + (B · C)</th>
+                    <th style="padding: 8px; text-align: left;">A + B</th>
+                    <th style="padding: 8px; text-align: left;">A + C</th>
+                    <th style="padding: 8px; text-align: left;">RHS: (A + B) · (A + C)</th>
+                </tr>
+                <tr style="background-color: #f9f9f9;"><td>0</td><td>0</td><td>0</td><td>0</td><td><strong>0</strong></td><td>0</td><td>0</td><td><strong>0</strong></td></tr>
+                <tr><td>0</td><td>0</td><td>1</td><td>0</td><td><strong>0</strong></td><td>0</td><td>1</td><td><strong>0</strong></td></tr>
+                <tr style="background-color: #f9f9f9;"><td>0</td><td>1</td><td>0</td><td>0</td><td><strong>0</strong></td><td>1</td><td>0</td><td><strong>0</strong></td></tr>
+                <tr><td>0</td><td>1</td><td>1</td><td>1</td><td><strong>1</strong></td><td>1</td><td>1</td><td><strong>1</strong></td></tr>
+                <tr style="background-color: #f9f9f9;"><td>1</td><td>0</td><td>0</td><td>0</td><td><strong>1</strong></td><td>1</td><td>1</td><td><strong>1</strong></td></tr>
+                <tr><td>1</td><td>0</td><td>1</td><td>0</td><td><strong>1</strong></td><td>1</td><td>1</td><td><strong>1</strong></td></tr>
+                <tr style="background-color: #f9f9f9;"><td>1</td><td>1</td><td>0</td><td>0</td><td><strong>1</strong></td><td>1</td><td>1</td><td><strong>1</strong></td></tr>
+                <tr><td>1</td><td>1</td><td>1</td><td>1</td><td><strong>1</strong></td><td>1</td><td>1</td><td><strong>1</strong></td></tr>
+            </table>
+            <p><strong>Conclusion:</strong> Since the column for <strong>LHS</strong> $A + (B \cdot C)$ is identical to the column for <strong>RHS</strong> $(A + B) \cdot (A + C)$ across all 8 input combinations, the Distributive Law is verified.</p>
 
-            <h4 style="color: #333333;">1. Display Monitors (Soft-Copy Output)</h4>
-            <ul>
-                <li><strong>LCD (Liquid Crystal Display):</strong> Uses liquid crystals between polarizing glass plates illuminated by CCFL backlights.</li>
-                <li><strong>LED (Light Emitting Diode):</strong> Uses energy-efficient LEDs for backlighting, offering higher contrast and thinner profiles.</li>
-            </ul>
+            <h4 style="color: #333333;">Verification 2: De Morgan's First Law $\overline{A \cdot B} = \overline{A} + \overline{B}$</h4>
 
-            <h4 style="color: #333333;">2. Printers (Hard-Copy Output)</h4>
-            <ul>
-                <li><strong>Dot Matrix Printer (Impact):</strong> Metal pins strike an inked ribbon to form text from dots; useful for multi-part carbon forms.</li>
-                <li><strong>Inkjet Printer (Non-Impact):</strong> Sprays microscopic drops of liquid ink onto paper.</li>
-                <li><strong>Laser Printer (Non-Impact):</strong> Uses electrostatic drums, laser beams, and powdered toner fused with hot rollers for sharp prints.</li>
-            </ul>
-
-            <h4 style="color: #333333;">3. Speakers (Audio Output)</h4>
-            <ul>
-                <li><strong>Speakers:</strong> Transducers converting digital/analog electrical signals into physical sound waves.</li>
-            </ul>
-
-            <hr style="border: 0; height: 1px; background-color: #cccccc; margin: 20px 0;">
-
-            <h3 style="color: #003366;">1.2.9 Hardware Interfaces</h3>
-            <ul>
-                <li><strong>Parallel Port (DB-25):</strong> Legacy 25-pin interface transferring 8 bits simultaneously over parallel wires (printers).</li>
-                <li><strong>Serial Port (RS-232 / DB-9):</strong> Legacy 9-pin interface transferring data sequentially 1 bit at a time over longer distances.</li>
-                <li><strong>USB Ports:</strong> Universal plug-and-play interface for power and data delivery (Type-A, Type-B, Type-C).</li>
-                <li><strong>HDMI:</strong> All-digital cable interface transmitting uncompressed HD video and multi-channel audio over a single cable.</li>
-                <li><strong>Expansion Slots (PCIe):</strong> High-speed motherboard sockets used to install internal cards like GPUs, network adapters, and NVMe SSD expansions.</li>
-            </ul>
+            <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; border-collapse: collapse; margin-top: 15px; border: 1px solid #cccccc; margin-bottom: 15px;">
+                <tr style="background-color: #003366; color: #ffffff;">
+                    <th style="padding: 10px; text-align: left;">A</th>
+                    <th style="padding: 10px; text-align: left;">B</th>
+                    <th style="padding: 10px; text-align: left;">A · B</th>
+                    <th style="padding: 10px; text-align: left;">LHS: $\overline{A \cdot B}$</th>
+                    <th style="padding: 10px; text-align: left;">$\overline{A}$</th>
+                    <th style="padding: 10px; text-align: left;">$\overline{B}$</th>
+                    <th style="padding: 10px; text-align: left;">RHS: $\overline{A} + \overline{B}$</th>
+                </tr>
+                <tr style="background-color: #f9f9f9;"><td>0</td><td>0</td><td>0</td><td><strong>1</strong></td><td>1</td><td>1</td><td><strong>1</strong></td></tr>
+                <tr><td>0</td><td>1</td><td>0</td><td><strong>1</strong></td><td>1</td><td>0</td><td><strong>1</strong></td></tr>
+                <tr style="background-color: #f9f9f9;"><td>1</td><td>0</td><td>0</td><td><strong>1</strong></td><td>0</td><td>1</td><td><strong>1</strong></td></tr>
+                <tr><td>1</td><td>1</td><td>1</td><td><strong>0</strong></td><td>0</td><td>0</td><td><strong>0</strong></td></tr>
+            </table>
+            <p><strong>Conclusion:</strong> The truth table column for <strong>LHS</strong> ($\overline{A \cdot B}$) matches the column for <strong>RHS</strong> ($\overline{A} + \overline{B}$), verifying De Morgan's First Law.</p>
         </div>
 
     </div>
@@ -321,7 +450,7 @@
 
     <!-- Bottom Navigation -->
     <div style="text-align: center; margin-top: 10px; margin-bottom: 20px;">
-        <a href="tableofcontents.html" style="color: #003366; font-weight: bold; text-decoration: none;">&laquo; Back to Table of Contents</a>
+        <a href="TableofContents.html" style="color: #003366; font-weight: bold; text-decoration: none;">&laquo; Back to Table of Contents</a>
     </div>
 
 </body>
