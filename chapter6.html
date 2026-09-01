@@ -3,9 +3,300 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chapter 6 - Web Technology I</title>
 </head>
 <body>
-    
+    <h1><a href="TableofContents.html">Back to Table of Contents</a></h1>
+    <hr class="double-line">
+
+    <h1>CHAPTER 6: WEB TECHNOLOGY I</h1>
+
+    <h2>6.1 Introduction to Web Development</h2>
+    <p><b>Web Development</b> refers to the process of building, creating, and maintaining websites and web applications delivered over the internet via HTTP/HTTPS protocols.</p>
+
+    <hr>
+
+    <h2>6.2 Web Browsers and Search Engines</h2>
+    <ul>
+        <li><b>Web Browser:</b> A client-side software application that requests, fetches, parses, and renders HTML/CSS/JS resources from web servers (e.g., Google Chrome, Mozilla Firefox, Apple Safari).</li>
+        <li><b>Search Engine:</b> A web-based database service that uses automated crawlers (bots) to index web pages, allowing users to discover content using keyword queries (e.g., Google, Bing, DuckDuckGo).</li>
+    </ul>
+
+    <hr>
+
+    <h2>6.3 Overview of Internet &amp; Web Technologies</h2>
+    <ul>
+        <li><b>DNS (Domain Name System):</b> Translates human-readable domain names (<code>example.com</code>) into numeric IP addresses (<code>192.0.2.1</code>).</li>
+        <li><b>HTTP/HTTPS:</b> Hypertext Transfer Protocol (Secure) handles data exchange between client and server interfaces.</li>
+    </ul>
+
+    <hr>
+
+    <h2>6.4 Content Management Systems (CMS)</h2>
+    <p>A <b>Content Management System (CMS)</b> is a software application that enables users to build, modify, and manage digital content on a website without writing code from scratch (e.g., WordPress, Joomla, Drupal).</p>
+
+    <hr>
+
+    <h2>6.4 HTML: The Language of the Web</h2>
+
+    <h3>6.4.1 Objectives &amp; 6.4.2 Structure of HTML</h3>
+    <p>HTML (HyperText Markup Language) is the standard markup language used to structure web documents.</p>
+
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Document Title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- Page content goes here --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <hr>
+
+    <h3>6.4.3 Publishing and Hosting</h3>
+    <ul>
+        <li><b>Web Hosting:</b> Server storage space allocated on connected infrastructure to host website assets publicly.</li>
+        <li><b>Publishing:</b> Transferring local website code onto a web host using File Transfer Protocol (FTP) or modern continuous integration deployment pipelines.</li>
+    </ul>
+
+    <hr>
+
+    <h3>6.4.4 HTML Tags vs. Attributes</h3>
+    <ul>
+        <li><b>Tag:</b> Structural marker defining an element (e.g., <code>&lt;p&gt;</code>).</li>
+        <li><b>Attribute:</b> Key-value properties contained inside an opening tag that modify behavior or provide metadata (e.g., <code>&lt;a href="index.html" target="_blank"&gt;</code>).</li>
+    </ul>
+
+    <hr>
+
+    <h3>6.4.5 Basic Tags, Headings, Fonts, Paragraphs, &amp; Text Formatting</h3>
+
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;HTML Basic Elements &amp; Formatting&lt;/title&gt;
+&lt;/head&gt;
+&lt;body bgcolor="#f4f4f4" text="#333333"&gt;
+
+  &lt;!-- Background Sound (Legacy Tag) --&gt;
+  &lt;!-- &lt;bgsound src="sound.mp3" loop="infinite"&gt; --&gt;
+
+  &lt;!-- 6.4.6 Headings with ALIGN --&gt;
+  &lt;h1 align="center"&gt;Main Title (H1)&lt;/h1&gt;
+  &lt;h2 align="left"&gt;Subheading (H2)&lt;/h2&gt;
+
+  &lt;!-- 6.4.8 Paragraph &amp; 6.4.9 Line Break --&gt;
+  &lt;p&gt;This is a paragraph demonstrating formatting.&lt;br /&gt;This line starts right after a break.&lt;/p&gt;
+
+  &lt;!-- 6.4.10 Comment --&gt;
+  &lt;!-- This is an HTML comment --&gt;
+
+  &lt;!-- 6.4.7 Legacy FONT Tag --&gt;
+  &lt;font size="5" color="red" face="Arial"&gt;Custom Font Text&lt;/font&gt;&lt;br /&gt;
+  &lt;small&gt;Smaller Text&lt;/small&gt; | &lt;big&gt;Bigger Text&lt;/big&gt;
+
+  &lt;hr /&gt;
+
+  &lt;!-- 6.4.11 Inline Formatting --&gt;
+  &lt;p&gt;
+    &lt;b&gt;Bold&lt;/b&gt;, &lt;i&gt;Italic&lt;/i&gt;, &lt;u&gt;Underline&lt;/u&gt;, &lt;mark&gt;Highlighted&lt;/mark&gt;&lt;br /&gt;
+    Water Formula: H&lt;sub&gt;2&lt;/sub&gt;O | Algebra: X&lt;sup&gt;2&lt;/sup&gt; + Y&lt;sup&gt;2&lt;/sup&gt;&lt;br /&gt;
+    &lt;em&gt;Emphasized Text&lt;/em&gt;
+  &lt;/p&gt;
+
+  &lt;blockquote&gt;
+    "This is a blockquote block used for indented long citations."
+  &lt;/blockquote&gt;
+
+  &lt;pre&gt;
+  Preformatted Text
+    Preserves    Spaces 
+      And Line Breaks Automatically.
+  &lt;/pre&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <hr>
+
+    <h3>6.4.12 Ordered Lists, 6.4.13 Unordered Lists, &amp; 6.4.14 Address/Links</h3>
+
+    <pre><code>&lt;!-- 6.4.12 Ordered List --&gt;
+&lt;h3&gt;Ordered List&lt;/h3&gt;
+&lt;ol type="A" start="3"&gt;
+  &lt;li value="3"&gt;Item C&lt;/li&gt;
+  &lt;li&gt;Item D&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- 6.4.13 Unordered &amp; Description Lists --&gt;
+&lt;h3&gt;Unordered List&lt;/h3&gt;
+&lt;ul type="square"&gt;
+  &lt;li&gt;First Bullet&lt;/li&gt;
+  &lt;li&gt;Second Bullet&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Description List&lt;/h3&gt;
+&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;!-- 6.4.14 Address &amp; Anchor Hyperlinks --&gt;
+&lt;address&gt;
+  Written by Jane Doe.&lt;br /&gt;
+  Contact: &lt;a href="mailto:jane@example.com"&gt;jane@example.com&lt;/a&gt;
+&lt;/address&gt;
+
+&lt;!-- Hyperlink Examples --&gt;
+&lt;p&gt;
+  &lt;a href="https://www.wikipedia.org" target="_blank"&gt;Link to External Site&lt;/a&gt;&lt;br /&gt;
+  &lt;a href="#top"&gt;Link to Bookmark Anchor within Same Document&lt;/a&gt;
+&lt;/p&gt;</code></pre>
+
+    <hr>
+
+    <h3>6.4.15 Tables</h3>
+    <pre><code>&lt;table border="1" width="100%" cellpadding="8" cellspacing="0"&gt;
+  &lt;thead style="background-color:#e0e0e0;"&gt;
+    &lt;tr&gt;
+      &lt;th&gt;ID&lt;/th&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Role&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;101&lt;/td&gt;
+      &lt;td&gt;Alice Johnson&lt;/td&gt;
+      &lt;td&gt;Administrator&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+
+    <hr>
+
+    <h3>6.4.16 Forms</h3>
+    <pre><code>&lt;form action="/submit_form" method="POST"&gt;
+  &lt;label for="username"&gt;Username:&lt;/label&gt;&lt;br /&gt;
+  &lt;input type="text" id="username" name="username" /&gt;&lt;br /&gt;&lt;br /&gt;
+
+  &lt;label&gt;Gender:&lt;/label&gt;&lt;br /&gt;
+  &lt;input type="radio" id="male" name="gender" value="male" /&gt;
+  &lt;label for="male"&gt;Male&lt;/label&gt;
+  &lt;input type="radio" id="female" name="gender" value="female" /&gt;
+  &lt;label for="female"&gt;Female&lt;/label&gt;&lt;br /&gt;&lt;br /&gt;
+
+  &lt;input type="checkbox" id="subscribe" name="subscribe" value="newsletter" /&gt;
+  &lt;label for="subscribe"&gt;Subscribe to Newsletter&lt;/label&gt;&lt;br /&gt;&lt;br /&gt;
+
+  &lt;label for="comments"&gt;Comments:&lt;/label&gt;&lt;br /&gt;
+  &lt;textarea id="comments" name="comments" rows="4" cols="40"&gt;&lt;/textarea&gt;&lt;br /&gt;&lt;br /&gt;
+
+  &lt;button type="submit"&gt;Submit Form&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+    <hr>
+
+    <h3>6.4.17 HTML5 Media Elements &amp; 6.4.18 HTML5 Graphics</h3>
+
+    <pre><code>&lt;!-- 6.4.17 Audio, Video, Embed --&gt;
+&lt;h3&gt;HTML5 Audio &amp; Video&lt;/h3&gt;
+&lt;video width="400" controls&gt;
+  &lt;source src="movie.mp4" type="video/mp4" /&gt;
+  &lt;track src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English" /&gt;
+  Your browser does not support the video tag.
+&lt;/video&gt;
+
+&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg" /&gt;
+&lt;/audio&gt;
+
+&lt;hr /&gt;
+
+&lt;!-- 6.4.18 Graphics: SVG &amp; Canvas --&gt;
+&lt;h3&gt;HTML5 SVG Graphic&lt;/h3&gt;
+&lt;svg width="100" height="100"&gt;
+  &lt;circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" /&gt;
+&lt;/svg&gt;
+
+&lt;h3&gt;HTML5 Canvas Element&lt;/h3&gt;
+&lt;canvas id="myCanvas" width="200" height="100" style="border:1px solid #000;"&gt;&lt;/canvas&gt;
+&lt;script&gt;
+  var c = document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+  ctx.fillStyle = "#FF0000";
+  ctx.fillRect(10, 10, 150, 75);
+&lt;/script&gt;</code></pre>
+
+    <hr>
+
+    <h2>6.5 Cascading Style Sheets (CSS)</h2>
+
+    <h3>6.5.1 Introduction to CSS</h3>
+    <p><b>Cascading Style Sheets (CSS)</b> is a style sheet language used to describe the presentation, layout, colors, and fonts of a document written in HTML.</p>
+
+    <hr>
+
+    <h3>6.5.2 Inline CSS</h3>
+    <p>Applied directly within an element's HTML opening tag using the <code>style</code> attribute.</p>
+    <pre><code>&lt;p style="color: blue; font-size: 18px; text-align: center;"&gt;
+  This text is styled using Inline CSS.
+&lt;/p&gt;</code></pre>
+
+    <hr>
+
+    <h3>6.5.3 Embedded (Internal) CSS</h3>
+    <p>Defined within a <code>&lt;style&gt;</code> block placed inside the <code>&lt;head&gt;</code> section of an HTML document.</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    body {
+      background-color: #fafafa;
+      font-family: Arial, sans-serif;
+    }
+    .highlight-box {
+      background-color: #ffffcc;
+      border: 1px solid #e6e600;
+      padding: 10px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="highlight-box"&gt;Embedded CSS styled box.&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <hr>
+
+    <h3>6.5.4 External CSS</h3>
+    <p>Styles are written in a standalone <code>.css</code> file and linked inside the HTML document's <code>&lt;head&gt;</code> using the <code>&lt;link&gt;</code> element.</p>
+
+    <h4>1. Style File (<code>styles.css</code>)</h4>
+    <pre><code>/* External Style Sheet */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+h1 {
+    color: #003366;
+    border-bottom: 2px solid #003366;
+}</code></pre>
+
+    <h4>2. HTML Document Linking External File</h4>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;link rel="stylesheet" type="text/css" href="styles.css" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Page Styled via External CSS&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
 </body>
 </html>
