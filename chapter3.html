@@ -2,383 +2,107 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 3: Software, Operating Systems, and Desktop Environments</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px auto;
-            max-width: 900px;
-            color: #333;
-        }
-        h1, h2, h3, h4 {
-            color: #003366;
-        }
-        h1 {
-            text-align: center;
-        }
-        .double-line {
-            border: 0;
-            border-top: 3px double #333;
-            height: 0;
-            margin: 20px 0;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        code {
-            background-color: #f4f4f4;
-            padding: 2px 5px;
-            border-radius: 4px;
-            font-family: Consolas, monospace;
-        }
-        .nav-link {
-            text-decoration: none;
-            color: #0066cc;
-            font-weight: bold;
-        }
-        .nav-link:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <title>Chapter 3: Software and Operating Systems</title>
 </head>
-<body id="top">
+<body>
 
-    <p><a href="TableofContents.html" class="nav-link">&larr; Back to Table of Contents</a></p>
+    <p><a href="TableofContents.html">Back to Table of Contents</a></p>
     
-    <h1>CHAPTER 3</h1>
-    <hr class="double-line">
-    <h2>Software, Operating Systems, and Desktop Environments</h2>
-
+    <h1>CHAPTER 3: Software, Operating Systems, and Desktop Environments</h1>
     <hr>
 
     <!-- SECTION 3.1 -->
-    <section id="section-3-1">
-        <h2>3.1 Concept of Software</h2>
-        <p>Software consists of the complete set of instructions, data structures, scripts, and programs that direct computer hardware to execute specific tasks. While hardware represents the physical components of a system (such as silicon microchips, circuit boards, and storage drives), software acts as the logical layer that brings these physical devices to life, governing how data is captured, manipulated, stored, and communicated.</p>
+    <h2>3.1 Concept of Software</h2>
+    <p>Software is a set of instructions or programs that tell a computer what to do. Without software, hardware cannot do anything.</p>
 
-        <h3>3.1.1 Definition of Software</h3>
-        <p>Software is formally defined as an organized collection of computer code, procedures, algorithms, and associated documentation that instructs a central processing unit (CPU) on how to process input data into meaningful output information. Software is intangible; it resides electronically within volatile memory (RAM) or non-volatile storage media (SSD, Hard Drives) as binary machine code executed directly by hardware logic circuits.</p>
-
-        <h3>3.1.2 Categories of Software</h3>
-        <p>Software is broadly classified into five major operational categories based on its proximity to the underlying hardware, deployment environment, and intended operational function:</p>
-
-        <h4>1. System Software</h4>
-        <p>System software provides the foundational platform required to run a computer's hardware and execute higher-level application programs. It operates in the background, managing low-level hardware interactions, system resources, and memory allocation without requiring constant human intervention.</p>
-        <ul>
-            <li><b>Operating Systems:</b> Manages system hardware, files, and running processes.<br>
-            <i>Examples:</i> Microsoft Windows 11, macOS Sequoia, Linux Kernel, Ubuntu.</li>
-            <li><b>Device Drivers:</b> Specialized micro-programs that enable the operating system to communicate directly with physical peripheral devices.<br>
-            <i>Examples:</i> NVIDIA GeForce display drivers, Realtek audio drivers, HP LaserJet printer controllers.</li>
-            <li><b>Language Translators:</b> Translates human-written high-level programming code into binary machine code executed by microprocessors.<br>
-            <i>Examples:</i> Compilers (GCC, Clang), Interpreters (Python Interpreter), Assemblers.</li>
-        </ul>
-
-        <h4>2. Utility Software</h4>
-        <p>Utility software consists of service programs designed to analyze, configure, optimize, maintain, and safeguard computer hardware, operating systems, and stored files. Unlike system software, utility software is typically invoked directly by users to perform system maintenance tasks.</p>
-        <ul>
-            <li><b>Antivirus & Security Utilities:</b> Scans, detects, quarantines, and removes malware threats.<br>
-            <i>Examples:</i> Windows Defender, Bitdefender, Malwarebytes.</li>
-            <li><b>Disk Management Utilities:</b> Formats, partitions, defragments, and analyzes hard disk storage sectors.<br>
-            <i>Examples:</i> Windows Disk Management, EaseUS Partition Master.</li>
-            <li><b>File Compression Utilities:</b> Reduces file sizes for efficient storage or network transmission using compression algorithms.<br>
-            <i>Examples:</i> WinRAR, 7-Zip, WinZip.</li>
-            <li><b>Backup Utilities:</b> Automated tools for duplicating critical files to external or cloud media.<br>
-            <i>Examples:</i> Acronis Cyber Protect, Macrium Reflect.</li>
-        </ul>
-
-        <h4>3. Application Software</h4>
-        <p>Application software consists of end-user programs created to assist individuals or businesses in completing specific tasks, such as generating documents, editing multimedia assets, analyzing data, or playing games.</p>
-        <ul>
-            <li><b>Word Processors:</b> Used for drafting, editing, and formatting text documents.<br>
-            <i>Examples:</i> Microsoft Word, LibreOffice Writer, Google Docs.</li>
-            <li><b>Spreadsheet Software:</b> Organizes quantitative data into tabular grids to perform complex financial and mathematical calculations.<br>
-            <i>Examples:</i> Microsoft Excel, Apache OpenOffice Calc.</li>
-            <li><b>Database Management Systems (DBMS):</b> Stores, structures, queries, and manages large volumes of relational data.<br>
-            <i>Examples:</i> Oracle Database, MySQL, Microsoft Access.</li>
-            <li><b>Graphic Design & Multimedia Suites:</b> Used for editing photos, vector graphics, and video rendering.<br>
-            <i>Examples:</i> Adobe Photoshop, Premiere Pro, Blender, GIMP.</li>
-        </ul>
-
-        <h4>4. Web-Based Applications</h4>
-        <p>Web-based applications are software programs that run on remote server infrastructure and are accessed by users over a local network or the Internet using a standard web browser interface. Web apps do not require local installation on the client computer, relying instead on cloud servers for data processing and database management.</p>
-        <ul>
-            <li><b>Office & Productivity Suites:</b> Google Workspace (Google Sheets, Google Slides), Microsoft 365 Web Apps.</li>
-            <li><b>Collaboration & Project Management:</b> Trello, Asana, Notion, Slack Web interface.</li>
-            <li><b>E-Commerce & Service Dashboards:</b> Canva (online image design), Figma (UI/UX design).</li>
-        </ul>
-
-        <h4>5. Mobile Apps</h4>
-        <p>Mobile applications are software packages engineered specifically to execute on compact handheld mobile hardware (smartphones, smartwatches, and tablets). They are optimized for touch-screen input, limited battery power reserves, mobile cellular connectivity, and location-based GPS services.</p>
-        <ul>
-            <li><b>Native Mobile Apps:</b> Built exclusively for a target mobile operating system using specific platform languages (e.g., Swift for iOS, Kotlin for Android).<br>
-            <i>Examples:</i> Apple Maps, WhatsApp Mobile.</li>
-            <li><b>Hybrid / Cross-Platform Mobile Apps:</b> Web-technologies wrapped inside a native shell to run across multiple mobile operating systems.<br>
-            <i>Examples:</i> Uber, Instagram, eSewa, TikTok.</li>
-        </ul>
-    </section>
+    <h3>3.1.1 Categories of Software</h3>
+    <ol>
+        <li>
+            <b>System Software</b>
+            <p>Runs the computer hardware and application programs. Examples: Operating systems (Windows, Linux), Device Drivers, and Language Translators.</p>
+        </li>
+        <li>
+            <b>Utility Software</b>
+            <p>Helps maintain, clean, and protect the computer. Examples: Antivirus (Windows Defender), Disk Cleanup, and File Compression tools (WinRAR).</p>
+        </li>
+        <li>
+            <b>Application Software</b>
+            <p>Programs used by people to do specific daily tasks. Examples: Word processors (Microsoft Word), Spreadsheets (Excel), and Paint.</p>
+        </li>
+        <li>
+            <b>Web-Based Applications</b>
+            <p>Apps that run on the internet through a web browser without needing local installation. Examples: Google Docs, Canva, and Figma.</p>
+        </li>
+        <li>
+            <b>Mobile Apps</b>
+            <p>Applications designed to run on smartphones and tablets. Examples: WhatsApp, TikTok, and Instagram.</p>
+        </li>
+    </ol>
 
     <hr>
 
     <!-- SECTION 3.2 -->
-    <section id="section-3-2">
-        <h2>3.2 Concept of Operating System</h2>
+    <h2>3.2 Concept of Operating System</h2>
+    
+    <h3>3.2.1 What is an Operating System?</h3>
+    <p>An Operating System (OS) is the main software that acts as a bridge between the user, applications, and the computer hardware. Examples include Microsoft Windows, macOS, and Linux.</p>
 
-        <h3>3.2.1 Introduction to Operating System</h3>
-        <p>An Operating System (OS) is the foundational system software program that acts as an intermediary bridge between user applications and physical computer hardware. Without an operating system, a computer is an unusable assembly of electronic components, as users would have to write complex low-level machine code instructions to execute even basic tasks like reading data from a hard drive or outputting text to a monitor.</p>
-
-        <h3>3.2.2 Role of Operating System</h3>
-        <p>The operating system fulfills three main roles within a computer system architecture:</p>
-        <ul>
-            <li><b>Government / Administrator Role:</b> Allocates hardware resources (CPU time, RAM capacity, disk storage space, external I/O connections) fairly and efficiently among competing software processes.</li>
-            <li><b>Resource Allocator:</b> Resolves conflicting requests for system resources to prevent deadlocks, data corruption, and system crashes.</li>
-            <li><b>Control Program:</b> Monitors the execution of user programs to prevent system errors, unauthorized access, and hardware misuse.</li>
-        </ul>
-
-        <h3>3.2.3 Functions of an Operating System</h3>
-        <p>An operating system manages system operations across several core functional areas:</p>
-        <ul>
-            <li><b>1. Processor Management (CPU Scheduling):</b><br>
-            Decides which running process gets access to the CPU core, for how long, and in what order. Uses scheduling algorithms such as First-Come, First-Served (FCFS), Shortest Job First (SJF), and Round Robin (RR) to maximize CPU utilization.</li>
-
-            <li><b>2. Memory Management:</b><br>
-            Tracks every byte of primary memory (RAM), recording whether it is free or allocated to a specific program. Dynamically allocates RAM blocks when applications launch and reclaims that memory space when programs close. Manages <i>Virtual Memory</i> by swapping inactive data onto hard disk storage when physical RAM is exhausted.</li>
-
-            <li><b>3. File Management:</b><br>
-            Organizes stored data into logical file structures (files and directory trees). Manages disk file systems (such as NTFS, FAT32, ext4), controlling read/write access permissions, file creation, deletion, renaming, and directory navigation.</li>
-
-            <li><b>4. Device Management (I/O Management):</b><br>
-            Coordinates communication with external peripheral hardware (keyboards, printers, storage drives) using specialized device drivers and I/O controllers. Manages data buffering, caching, and printing queues (spooling).</li>
-
-            <li><b>5. Security and Protection:</b><br>
-            Enforces access control policies to safeguard stored data against unauthorized intrusion. Requires password/biometric user authentication, prevents unauthorized programs from overwriting system memory, and isolates running processes from one another.</li>
-
-            <li><b>6. User Interface Provision:</b><br>
-            Provides an interactive interface through which human operators issue commands to the computer. This interface can be a text-based Command Line Interface (CLI) like MS-DOS or an intuitive Graphical User Interface (GUI) like Windows.</li>
-        </ul>
-
-        <h3>3.2.4 Operating System Terminology</h3>
-        <p>Modern operating systems use distinct execution techniques to optimize performance based on system architecture:</p>
-        <ul>
-            <li><b>Multiprogramming:</b><br>
-            A technique where multiple software programs are loaded into main memory (RAM) simultaneously. The CPU executes one program at a time; if that program pauses to wait for an input/output operation to complete (such as reading a file from a hard drive), the operating system immediately switches the CPU to another program sitting in memory. This prevents the CPU from sitting idle during I/O delays.<br>
-            <i>Example:</i> Early mainframe batch processing systems loading multiple calculations into memory at once.</li>
-
-            <li><b>Multitasking (Time-Sharing):</b><br>
-            A logical extension of multiprogramming where the CPU switches between active tasks so rapidly (using small time slices called quanta) that users can interact with multiple applications running simultaneously without noticing lag.<br>
-            <i>Example:</i> Editing a Word document while downloading a video file and listening to music on a desktop PC.</li>
-
-            <li><b>Multiprocessing:</b><br>
-            A computing system architecture that uses two or more physical processing units (CPU cores or separate microprocessors) operating together to execute multiple program instructions simultaneously.<br>
-            <i>Example:</i> A multi-core workstation processor (e.g., AMD Ryzen 16-Core or Intel Core i9) running multi-threaded 3D video rendering tasks across separate hardware cores concurrently.</li>
-
-            <li><b>Distributed Operating System:</b><br>
-            An operating system configuration where multiple independent physical computers, interconnected via high-speed networks, coordinate their operations to appear to users as a single unified system. Processing loads and data storage are distributed across multiple remote server nodes.<br>
-            <i>Example:</i> Apache Hadoop clusters, cloud computing infrastructure (AWS EC2 instances), and enterprise computational grid systems.</li>
-        </ul>
-    </section>
+    <h3>3.2.2 Functions of an Operating System</h3>
+    <ul>
+        <li><b>Processor Management:</b> Decides which program uses the CPU and for how long.</li>
+        <li><b>Memory Management:</b> Tracks and manages RAM usage for all running programs.</li>
+        <li><b>File Management:</b> Organizes files, folders, and drives on the computer.</li>
+        <li><b>Device Management:</b> Manages connected devices like keyboards, mice, and printers using drivers.</li>
+        <li><b>Security:</b> Protects the computer using passwords and user accounts.</li>
+    </ul>
 
     <hr>
 
     <!-- SECTION 3.3 -->
-    <section id="section-3-3">
-        <h2>3.3 Windows Operating System</h2>
+    <h2>3.3 Windows Operating System</h2>
+    
+    <h3>3.3.1 Desktop and Windows Environment</h3>
+    <p>Windows uses a Graphical User Interface (GUI) with icons, windows, and a mouse so users don't have to type complex text commands.</p>
+    <ul>
+        <li><b>Desktop:</b> The main screen showing icons and wallpaper.</li>
+        <li><b>Taskbar:</b> The bar at the bottom with the Start button, open apps, and the clock.</li>
+        <li><b>Window Controls:</b> Minimize (-), Maximize/Restore ([]), and Close (X).</li>
+    </ul>
 
-        <h3>3.3.1 Introduction to GUI-Based Operating System and Its Features</h3>
-        <p>A Graphical User Interface (GUI) operating system allows users to interact with computer hardware using visual elements—such as windows, icons, menus, buttons, and pointers (known as the WIMP paradigm)—instead of typing complex text-based commands into a terminal prompt.</p>
-
-        <p><b>Key Features of modern GUI Operating Systems (e.g., Microsoft Windows):</b></p>
-        <ul>
-            <li><b>Visual Interaction:</b> Graphical icons represent files, applications, and system settings, making navigation intuitive.</li>
-            <li><b>WYSIWYG ("What You See Is What You Get"):</b> Screen displays accurately preview how printed documents or rendered graphics will look.</li>
-            <li><b>Multitasking Window Management:</b> Allows multiple application windows to be opened, minimized, resized, tiled, or stacked on screen simultaneously.</li>
-            <li><b>Plug and Play (PnP) Support:</b> Automatically detects, configures, and installs appropriate drivers for newly connected USB hardware peripherals.</li>
-            <li><b>Standardized UI Controls:</b> Uses consistent UI elements (drop-down menus, radio buttons, dialogue boxes, scrollbars) across third-party software applications.</li>
-        </ul>
-
-        <h3>3.3.2 Working in Desktop Application and Window Environment</h3>
-        <p>The Windows desktop environment serves as the primary workspace for launching programs and organizing files. Key desktop components include:</p>
-        <ul>
-            <li><b>The Desktop Workspace:</b> The background area displaying icons, shortcuts, open windows, and wallpaper images.</li>
-            <li><b>The Taskbar:</b> Located at the screen edge, it displays currently active application buttons, pinned program shortcuts, the Start Menu button, and the System Tray (Notification Area displaying clock, volume, and network status).</li>
-            <li><b>Window Controls:</b> Application windows feature a standard top title bar housing three essential window manipulation control buttons:
-                <ul>
-                    <li><i>Minimize Button (_):</i> Collapses the open window onto the bottom taskbar while keeping the program running in memory.</li>
-                    <li><i>Maximize / Restore Button (square):</i> Expands the window to fill the entire display screen or restores it to its previous scaled size.</li>
-                    <li><i>Close Button (X):</i> Terminates the active window and frees its assigned system memory.</li>
-                </ul>
-            </li>
-        </ul>
-
-        <h3>3.3.3 Manage Files and Folders with File Explorer</h3>
-        <p>File Explorer (formerly Windows Explorer) is the graphical file management tool used to navigate, organize, copy, move, rename, and search physical hard drive storage directories.</p>
-
-        <p><b>Core File Management Tasks in File Explorer:</b></p>
-        <ul>
-            <li><b>Creating Folders:</b> Right-click within a directory window, navigate to <code>New -&gt; Folder</code>, or use the keyboard shortcut <code>Ctrl + Shift + N</code> to create organized storage directories.</li>
-            <li><b>Copying vs. Moving Data:</b>
-                <ul>
-                    <li><i>Copying:</i> Duplicates a file/folder to a new destination while retaining the original file in its initial location (Shortcut: <code>Ctrl + C</code> to copy, <code>Ctrl + V</code> to paste).</li>
-                    <li><i>Moving (Cut):</i> Relocates a file/folder to a new destination while removing it from its original location (Shortcut: <code>Ctrl + X</code> to cut, <code>Ctrl + V</code> to paste).</li>
-                </ul>
-            </li>
-            <li><b>Renaming Files:</b> Right-click a target file, select <code>Rename</code>, or press <code>F2</code> to update its name while preserving its file extension.</li>
-            <li><b>Deleting Data:</b> Pressing <code>Delete</code> moves a file to the temporary <b>Recycle Bin</b>, allowing recovery. Pressing <code>Shift + Delete</code> bypasses the Recycle Bin, permanently purging the data from physical disk sectors.</li>
-        </ul>
-
-        <h3>3.3.4 Customize the Start Screen and Desktop</h3>
-        <p>Windows allows users to customize their visual interface for improved workspace organization and productivity:</p>
-        <ul>
-            <li><b>Personalization Settings:</b> Accessing <code>Settings -&gt; Personalization</code> allows users to change desktop background wallpaper, system dark/light themes, accent colors, and lock screen graphics.</li>
-            <li><b>Customizing the Start Menu:</b> Pinning frequently used business applications directly to the Start Menu layout for quick access, reorganizing application groupings, or adjusting Start Menu grid sizes.</li>
-            <li><b>Desktop Shortcuts:</b> Creating custom desktop icons linking to deep system file directories, executable files, or web links by right-clicking an item and selecting <code>Send to -&gt; Desktop (create shortcut)</code>.</li>
-        </ul>
-
-        <h3>3.3.5 Installing and Removing Devices</h3>
-        <p>Managing external peripherals (printers, scanners, audio devices) and internal expansion components involves driver setup and hardware removal protocols:</p>
-        <ul>
-            <li><b>Installing Peripheral Hardware:</b> Modern USB devices rely on Plug-and-Play standards. When plugged in, the OS identifies the device's hardware ID and automatically installs matching signed drivers from the Windows Update online repository. Manual installation uses setup wizard utilities provided by manufacturers.</li>
-            <li><b>Removing Hardware Devices:</b> Accessing <code>Settings -&gt; Bluetooth &amp; Devices -&gt; Devices</code> allows users to select connected hardware (such as Bluetooth headsets or local printers) and click <code>Remove Device</code> to clear associated software bindings.</li>
-            <li><b>Safe Ejection of Storage Media:</b> USB mass storage drives must be unmounted using the <i>"Safely Remove Hardware and Eject Media"</i> icon in the system tray before physical disconnection to prevent data corruption in write-cache buffers.</li>
-        </ul>
-
-        <h3>3.3.6 Manage Passwords and Privacy Levels</h3>
-        <p>Protecting user accounts and system data against unauthorized local access requires configuring credentials and privacy controls:</p>
-        <ul>
-            <li><b>User Account Password Management:</b> Configured under <code>Settings -&gt; Accounts -&gt; Sign-in Options</code>. Windows supports traditional alphanumeric passwords, custom Security PINs, and <b>Windows Hello</b> biometric authentication (facial recognition or fingerprint scanning).</li>
-            <li><b>Privacy Settings Control:</b> Managed under <code>Settings -&gt; Privacy &amp; Security</code>. Users can grant or revoke application permissions to access hardware peripherals (webcam, microphone), location tracking GPS chips, contacts, and telemetry diagnostic data collection.</li>
-        </ul>
-
-        <h3>3.3.7 Use of Control Panel, System Tools, and Accessories</h3>
-
-        <p><b>1. Control Panel:</b><br>
-        The legacy administrative management dashboard in Windows containing applets used to adjust deep system configurations, control user accounts, set up network connections, configure system security, and modify hardware settings.</p>
-
-        <p><b>2. System Tools:</b></p>
-        <ul>
-            <li><b>Task Manager (<code>Ctrl + Shift + Esc</code>):</b> Displays real-time CPU, RAM, Disk, and Network usage metrics. Used to force-close unresponsive application processes, manage system startup programs, and monitor system resources.</li>
-            <li><b>Disk Cleanup:</b> A built-in utility that scans hard disk partitions to calculate and remove temporary system files, internet caches, installer logs, and contents of the Recycle Bin to free up disk space.</li>
-            <li><b>Defragment and Optimize Drives:</b> Consolidates fragmented data blocks on traditional mechanical Hard Disk Drives (HDDs) to speed up file read access, or runs TRIM optimization commands on Solid State Drives (SSDs).</li>
-        </ul>
-
-        <p><b>3. Windows Built-in Accessories:</b></p>
-        <ul>
-            <li><b>Notepad:</b> A lightweight plain-text editor used to write basic text files or edit source code without formatting overhead.</li>
-            <li><b>Paint / Paint 3D:</b> A basic raster graphics editor used for quick image cropping, drawing, and resizing.</li>
-            <li><b>Snipping Tool:</b> A screen capture utility used to record videos or capture screen regions, annotate screenshots, and save image files.</li>
-        </ul>
-    </section>
+    <h3>3.3.2 Managing Files and Folders</h3>
+    <p>File Explorer is used to manage files. Basic shortcuts include:</p>
+    <ul>
+        <li><b>Copy:</b> <code>Ctrl + C</code></li>
+        <li><b>Paste:</b> <code>Ctrl + V</code></li>
+        <li><b>Cut / Move:</b> <code>Ctrl + X</code></li>
+        <li><b>New Folder:</b> <code>Ctrl + Shift + N</code></li>
+        <li><b>Delete:</b> Moves item to the Recycle Bin.</li>
+    </ul>
 
     <hr>
 
     <!-- SECTION 3.4 -->
-    <section id="section-3-4">
-        <h2>3.4 Open Source and Mobile Operating Systems</h2>
+    <h2>3.4 Open Source Operating Systems</h2>
+    <p>An Open Source operating system is free to use, and its source code is open for anyone to view, edit, and improve. The most popular example is <b>Linux</b>.</p>
 
-        <h3>3.4.1 Concept of Open Source Operating Systems</h3>
-        <p>An Open Source Operating System is an operating system whose underlying source code is made freely available to the public under open-source licenses (such as the GNU General Public License - GPL). Users, software developers, and system administrators are granted legal rights to view, modify, customize, debug, compile, and redistribute the operating system code without paying licensing fees to a proprietary vendor.</p>
-
-        <p><b>Comparison: Open Source vs. Proprietary Operating Systems:</b></p>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Attribute</th>
-                    <th>Open Source OS (e.g., Linux)</th>
-                    <th>Proprietary OS (e.g., Windows, macOS)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><b>Source Code Access</b></td>
-                    <td>Fully public; anyone can view, audit, and modify the code.</td>
-                    <td>Closed; source code is kept secret by the owning corporation.</td>
-                </tr>
-                <tr>
-                    <td><b>Licensing Cost</b></td>
-                    <td>Free to download, deploy, and redistribute (FOSS model).</td>
-                    <td>Requires paid user licenses, activation keys, or subscription fees.</td>
-                </tr>
-                <tr>
-                    <td><b>Development Model</b></td>
-                    <td>Community-driven global developer networks.</td>
-                    <td>In-house corporate development teams.</td>
-                </tr>
-                <tr>
-                    <td><b>Customizability</b></td>
-                    <td>Extremely high; can modify the system down to the kernel level.</td>
-                    <td>Restricted to user preferences allowed by the vendor UI.</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>3.4.2 Introduction to Linux and UNIX</h3>
-
-        <p><b>UNIX Operating System:</b><br>
-        Developed in 1969 by Ken Thompson, Dennis Ritchie, and others at AT&amp;T Bell Labs, UNIX is a powerful, multi-user, multitasking, command-line-driven operating system written primarily in the C programming language. Built around a modular philosophy, UNIX introduced concepts like hierarchical file systems, pipes, command shells, and networking protocols (TCP/IP). Modern enterprise UNIX implementations include IBM AIX, HP-UX, and Oracle Solaris.</p>
-
-        <p><b>Linux Operating System:</b><br>
-        In 1991, Finnish computer science student Linus Torvalds created a free, open-source UNIX-like kernel named <b>Linux</b>. Combining his new kernel with the pre-existing tools of Richard Stallman's GNU Project created the complete, fully functional <b>GNU/Linux</b> operating system. Linux adopts UNIX architectural concepts, operating reliably across everything from microcontrollers and single-board computers (Raspberry Pi) to supercomputer processing clusters and cloud servers.</p>
-
-        <h3>3.4.3 Linux Distributions (Distros)</h3>
-        <p>Because the core Linux Kernel is just the underlying engine that manages hardware memory and CPU tasks, operating system bundles called <b>Linux Distributions (Distros)</b> package the kernel alongside system utilities, graphical desktop environments (GNOME, KDE Plasma), package management tools, and pre-installed application software for easy installation.</p>
-
-        <p><b>Major Linux Distributions and Their Primary Uses:</b></p>
-        <ul>
-            <li><b>Ubuntu (Canonical):</b><br>
-            The most popular user-friendly Linux distribution. Features a polished desktop user interface, extensive software support, and an active community forum. Ideal for beginners, software developers, and cloud web servers.</li>
-
-            <li><b>Fedora (Red Hat Community):</b><br>
-            A community-supported distribution focused on integrating the latest cutting-edge software updates, security features, and open-source innovations. Serves as the upstream testing platform for enterprise Linux technologies.</li>
-
-            <li><b>Debian:</b><br>
-            Known for its exceptional stability, testing rigor, and commitment to free open-source software principles. Uses the <code>.deb</code> package format and <code>apt</code> package manager. Serves as the base distribution upon which Ubuntu and Linux Mint are built.</li>
-
-            <li><b>Red Hat Enterprise Linux (RHEL):</b><br>
-            A commercial, enterprise-grade Linux distribution built for stability, security compliance, and long-term corporate software support. Common in enterprise server farms, bank infrastructures, and corporate data centers.</li>
-
-            <li><b>Kali Linux (Offensive Security):</b><br>
-            A specialized Debian-derived distribution pre-configured with hundreds of security auditing, penetration testing, network packet sniffing, and digital forensics tools used by cybersecurity professionals.</li>
-        </ul>
-
-        <h3>3.4.4 Concept of Mobile Operating Systems</h3>
-        <p>A Mobile Operating System is software optimized to run on portable, battery-powered handheld computing devices such as smartphones, smartwatches, and tablet computers. Mobile operating systems prioritize energy efficiency, touch interface controls, wireless connectivity management (5G, LTE, Wi-Fi, Bluetooth), integrated GPS navigation capabilities, and app ecosystem security sandboxing.</p>
-
-        <h3>3.4.5 Types of Mobile Operating Systems</h3>
-
-        <p><b>1. Android OS (Google):</b><br>
-        An open-source mobile operating system developed by Google, built on top of a modified Linux Kernel. Android powers the majority of global smartphones due to its licensing flexibility across hardware manufacturers (Samsung, Xiaomi, Google Pixel, Motorola).</p>
-        <ul>
-            <li><i>Key Characteristics:</i> Highly customizable user interfaces, support for third-party application stores, open-source codebase (Android Open Source Project - AOSP), app distribution via the <b>Google Play Store</b>, and deep integration with Google cloud services.</li>
-        </ul>
-
-        <p><b>2. iOS (Apple):</b><br>
-        A proprietary, closed-source mobile operating system developed exclusively by Apple Inc. for its iPhone device lineup (derived from Apple’s desktop macOS core).</p>
-        <ul>
-            <li><i>Key Characteristics:</i> Closed platform ecosystem, high optimization between hardware and software, strong privacy controls, consistent long-term OS updates, and app distribution via the <b>Apple App Store</b>.</li>
-        </ul>
-
-        <p><b>3. Specialized / Legacy Mobile Operating Systems:</b></p>
-        <ul>
-            <li><b>iPadOS:</b> Apple's dedicated mobile OS derived from iOS, optimized specifically for large-screen iPad tablets with multi-window multitasking and stylus input support.</li>
-            <li><b>watchOS / Wear OS:</b> Compact, low-power mobile operating systems designed by Apple and Google respectively to power smartwatches and fitness wearables.</li>
-            <li><i>Legacy Platforms:</i> Historical mobile operating systems that pioneered the industry, including Symbian OS (Nokia), BlackBerry OS, Windows Phone/Mobile (Microsoft), and Palm OS.</li>
-        </ul>
-    </section>
-
-    <hr>
-    <p><a href="#top" class="nav-link">&uarr; Back to Top</a> | <a href="TableofContents.html" class="nav-link">&larr; Back to Table of Contents</a></p>
+    <p><b>Quick Comparison:</b></p>
+    <table border="1">
+        <tr>
+            <th>Feature</th>
+            <th>Open Source (Linux)</th>
+            <th>Proprietary (Windows)</th>
+        </tr>
+        <tr>
+            <td>Cost</td>
+            <td>Free</td>
+            <td>Paid</td>
+        </tr>
+        <tr>
+            <td>Source Code</td>
+            <td>Publicly available</td>
+            <td>Hidden / Secret</td>
+        </tr>
+    </table>
 
 </body>
 </html>
