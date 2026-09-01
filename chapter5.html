@@ -9,293 +9,386 @@
     <h1><a href="TableofContents.html">Back to Table of content</a></h1>
 <b><h1>CHAPTER 5</h1></b>
 <hr class="double-line">
-<h2>Web Technology and Internet Applications</h2>
+<<h1>CHAPTER 5: PROGRAMMING CONCEPTS &amp; C PROGRAMMING</h1>
+
+  <h2>5.1 Programming Concepts</h2>
+
+  <h3>5.1.1 Introduction to Programming Languages</h3>
+  <p>A <b>programming language</b> is a standardized set of rules, syntax, and symbols used to instruct a computer system to perform specific tasks. It acts as a bridge between human logic and the machine's underlying hardware execution pipeline.</p>
 
   <hr>
 
-  <h2>5.1 Introduction to Web Technology</h2>
-  <p><b>Web Technology</b> refers to the mechanisms, protocols, markup languages, and programming interfaces that facilitate communication between client devices and server infrastructure across the World Wide Web. It encompasses both front-end user interface rendering and back-end database manipulation and business logic processing.</p>
-
-  <p>The core architecture of web technologies relies on client-server models, uniform resource identifiers (URIs/URLs), transfer protocols (HTTP/HTTPS), and standard client-side markup languages including <b>HTML</b>, <b>CSS</b>, and <b>JavaScript</b>.</p>
-
-  <hr>
-
-  <h3>5.1.1 HyperText Markup Language (HTML)</h3>
-  <p><b>HTML</b> is the standard structural markup language used to create and display documents on the World Wide Web. It uses a system of tags and elements to define page headers, body paragraphs, hyperlinks, embedded visual media, and tabular data layouts.</p>
-
-  <h4>Key Features & Concepts</h4>
+  <h3>5.1.2 Low-Level, High-Level, and 4GL Programming Languages</h3>
   <ul>
-    <li><b>Structural Tagging:</b> Utilization of semantic elements such as <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;footer&gt;</code> to define document architecture.</li>
-    <li><b>Hyperlinking:</b> Anchoring references via <code>&lt;a href="..."&gt;</code> tags to interlink web pages across global networks.</li>
-    <li><b>Form Handling:</b> Collecting user inputs using textual textboxes, radio choices, select dropdowns, and submission triggers.</li>
-    <li><b>DOM Construction:</b> Generation of the Document Object Model (DOM) tree parsed dynamically by web browsers.</li>
+    <li><b>Low-Level Languages (1GL &amp; 2GL):</b> Hardware-dependent languages providing minimal abstraction.
+      <ul>
+        <li><i>Machine Language (1GL):</i> Expressed purely in binary (0s and 1s). Executed directly by the CPU without translation.</li>
+        <li><i>Assembly Language (2GL):</i> Uses human-readable mnemonics (e.g., <code>MOV</code>, <code>ADD</code>, <code>SUB</code>) instead of raw binary strings. Requires an assembler.</li>
+      </ul>
+    </li>
+    <li><b>High-Level Languages (3GL):</b> Machine-independent languages using natural English keywords and mathematical notation (e.g., C, C++, Java, Python). They require compilers or interpreters.</li>
+    <li><b>Fourth-Generation Languages (4GL):</b> Non-procedural, domain-specific languages designed to reduce programming effort by specifying <i>what</i> output is needed rather than <i>how</i> to compute it (e.g., SQL, MATLAB, SAS).</li>
   </ul>
 
-  <h4>Popular Standard Specifications</h4>
-  <p>HTML4.01, XHTML 1.0, HTML5 Standard Specification.</p>
+  <hr>
 
-  <h4>Practical Syntax & Document Structure Example</h4>
-  <p>Below is a standard HTML5 document structure illustrating semantic organization and metadata integration:</p>
-
-  <pre><code>&lt;!-- HTML5 Document Structure Example --&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;Web Technology Architecture&lt;/title&gt;
-  &lt;style&gt;
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
-    .highlight { color: #0066cc; font-weight: bold; }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;header&gt;
-    &lt;h1&gt;Client-Server Communication Architecture&lt;/h1&gt;
-  &lt;/header&gt;
-  
-  &lt;section&gt;
-    &lt;p&gt;
-      Web browsers render structural data received via HTTP GET requests.
-      Elements highlighted in &lt;span class="highlight"&gt;blue text&lt;/span&gt; indicate active styling.
-    &lt;/p&gt;
-  &lt;/section&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-  </code></pre>
+  <h3>5.1.3 Compiler, Interpreter, and Assembler</h3>
+  <table border="1" cellpadding="6">
+    <thead>
+      <tr style="background-color: #f2f2f2;">
+        <th>Translator</th>
+        <th>Input Code</th>
+        <th>Execution Mechanism</th>
+        <th>Error Detection</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>Assembler</b></td>
+        <td>Assembly Language</td>
+        <td>Converts mnemonics directly into absolute machine binary.</td>
+        <td>Low-level syntax errors.</td>
+      </tr>
+      <tr>
+        <td><b>Compiler</b></td>
+        <td>High-Level Language</td>
+        <td>Translates entire source code into machine code in one pass, producing an executable object file.</td>
+        <td>Reports all errors after compilation completes.</td>
+      </tr>
+      <tr>
+        <td><b>Interpreter</b></td>
+        <td>High-Level Language</td>
+        <td>Translates and executes source code line-by-line in real time without generating a standalone executable.</td>
+        <td>Stops execution at the first line containing an error.</td>
+      </tr>
+    </tbody>
+  </table>
 
   <hr>
 
-  <h3>5.1.2 Cascading Style Sheets (CSS)</h3>
-  <p><b>Cascading Style Sheets (CSS)</b> is a style sheet language used to describe the visual layout, presentation, color scheme, typography, and responsive grid layouts of a document written in HTML or XML.</p>
-
-  <h4>Key Features & Concepts</h4>
+  <h3>5.1.4 Syntax, Semantic, and Runtime Errors</h3>
   <ul>
-    <li><b>Separation of Concerns:</b> Isolating visual design specifications from the structural HTML content markup.</li>
-    <li><b>CSS Box Model:</b> Controlling content dimensions using margins, borders, padding, and actual element height/width boundaries.</li>
-    <li><b>Responsive Layouts:</b> Utilizing Flexbox, CSS Grid, and Media Queries to render layouts smoothly across desktop and mobile viewports.</li>
-    <li><b>Cascading & Specificity:</b> Rule precedence resolution based on selector weighting, inheritance, and source order.</li>
+    <li><b>Syntax Error:</b> Violations of the language's grammatical rules (e.g., missing semicolons, unmatched parentheses). Caught during compilation.</li>
+    <li><b>Semantic (Logical) Error:</b> Code runs to completion without crashing, but yields incorrect outputs due to flawed logic (e.g., writing <code>area = width + height</code> instead of multiplication).</li>
+    <li><b>Runtime Error:</b> Flaws triggered during program execution, causing crash events (e.g., division by zero, accessing out-of-bounds memory addresses).</li>
   </ul>
-
-  <h4>Popular Frameworks</h4>
-  <p>Bootstrap, Tailwind CSS, Foundation, Bulma.</p>
-
-  <h4>CSS Syntax & Rule Example</h4>
-  <p>Consider the following stylesheet declaration showing class rules, box alignment, and responsive breakpoint rules:</p>
-
-  <pre><code>/* Global Reset & Base Typography */
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #f4f6f9;
-}
-
-/* Flexbox Layout Container */
-.container {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Responsive Media Query */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
-}
-  </code></pre>
 
   <hr>
 
-  <h3>5.1.3 Client-Side Scripting (JavaScript)</h3>
-  <p><b>JavaScript</b> is a high-level, lightweight, interpreted or just-in-time compiled programming language equipped with first-class functions. It adds dynamic interactivity, event management, asynchronous requests, and real-time DOM updates to client web applications.</p>
-
-  <h4>Key Features & Concepts</h4>
+  <h3>5.1.5 Control Structures: Sequence, Selection, and Iteration</h3>
   <ul>
-    <li><b>DOM Manipulation:</b> Programmatically reading, altering, and inserting structural nodes into an active web document dynamically.</li>
-    <li><b>Asynchronous Processing (AJAX/Fetch):</b> Requesting external data from web servers asynchronously without requiring a full browser page refresh.</li>
-    <li><b>Event-Driven Execution:</b> Binding event listeners to respond to click sequences, keystrokes, page scrolls, and form submit triggers.</li>
+    <li><b>Sequence:</b> Default execution flow where statements execute step-by-step from top to bottom.</li>
+    <li><b>Selection (Branching):</b> Executes specific code blocks conditionally based on logical criteria (e.g., <code>if-else</code>, <code>switch</code>).</li>
+    <li><b>Iteration (Looping):</b> Repeats a code block until a specified termination condition becomes false (e.g., <code>while</code>, <code>for</code>).</li>
   </ul>
 
-  <h4>Popular Frameworks & Libraries</h4>
-  <p>React.js, Vue.js, Angular, Vanilla ES6+ JavaScript.</p>
+  <hr>
 
-  <h4>Dynamic DOM Manipulation & Script Syntax Example</h4>
-  <p>The code script below shows how client-side JavaScript attaches event triggers to update document nodes dynamically:</p>
+  <h3>5.1.6 Program Design Tools – Algorithm, Flowchart, and Pseudocode</h3>
+  <p><b>Problem:</b> Compute the factorial of a given positive integer $N$.</p>
 
-  <pre><code>// Dynamic Element Creation and Event Handling
-document.addEventListener("DOMContentLoaded", () => {
-  const fetchButton = document.getElementById("btn-load-data");
-  
-  fetchButton.addEventListener("click", async () => {
-    try {
-      const response = await fetch("https://api.example.com/v1/status");
-      const data = await response.json();
-      
-      const statusDisplay = document.getElementById("status-node");
-      statusDisplay.textContent = `Server Status: ${data.status}`;
-      statusDisplay.style.color = "green";
-    } catch (error) {
-      console.error("Failed to load server data:", error);
+  <h4>1. Algorithm</h4>
+  <pre><code>Step 1: Start
+Step 2: Read integer input N
+Step 3: Initialize fact = 1, i = 1
+Step 4: If i > N, jump to Step 7
+Step 5: Compute fact = fact * i
+Step 6: Increment i = i + 1, jump to Step 4
+Step 7: Print fact
+Step 8: Stop</code></pre>
+
+  <h4>2. Pseudocode</h4>
+  <pre><code>BEGIN
+  READ N
+  SET fact = 1
+  FOR i = 1 TO N DO
+    fact = fact * i
+  END FOR
+  PRINT fact
+END</code></pre>
+
+  <h4>3. Flowchart Representation (Textual Model)</h4>
+  <pre><code>[Start] ──> [Input N] ──> [fact = 1, i = 1] ──> < Is i <= N? >
+                                                   │       │
+                                                 (Yes)    (No)
+                                                   │       │
+                                                   ▼       ▼
+                                         [fact = fact * i] [Print fact]
+                                         [i = i + 1]       │
+                                                   │       ▼
+                                                   └───> [Stop]</code></pre>
+
+  <hr>
+
+  <h3>5.1.7 Absolute Binary, BCD, ASCII, and Unicode</h3>
+  <ul>
+    <li><b>Absolute Binary:</b> Pure positional base-2 numerical representation using bits <code>0</code> and <code>1</code>.</li>
+    <li><b>Binary-Coded Decimal (BCD):</b> Encodes each decimal digit ($0$ through $9$) separately into a fixed 4-bit binary nibble (e.g., decimal $25_{10}$ becomes <code>0010 0101</code> in BCD).</li>
+    <li><b>ASCII (American Standard Code for Information Interchange):</b> A 7-bit character encoding standard supporting up to $128$ characters ($2^7$), limited primarily to English characters and basic symbols.</li>
+    <li><b>Unicode:</b> A universal character encoding standard (e.g., UTF-8, UTF-16) designed to represent scripts, languages, and symbols across all global writing systems (supporting over $140,000$ characters).</li>
+  </ul>
+
+  <hr>
+
+  <h2>5.2 C Programming Language</h2>
+
+  <h3>5.2.1 Introduction and Features of C</h3>
+  <p>Developed by Dennis Ritchie at Bell Labs in 1972, <b>C</b> is a structured, procedural high-level programming language renowned for its balance of abstraction and direct memory manipulation capability via pointers.</p>
+  <ul>
+    <li><b>Key Features:</b> Mid-level control capabilities, modularity via functions, extensive built-in operators, fast execution speed, and high portability across platform architectures.</li>
+  </ul>
+
+  <hr>
+
+  <h3>5.2.2 Structure of a C Program</h3>
+  <pre><code>/* 1. Documentation Section */
+// Program to compute area of a circle
+
+/* 2. Link / Preprocessor Section */
+#include &lt;stdio.h&gt;
+
+/* 3. Definition Section */
+#define PI 3.14159
+
+/* 4. Global Declaration Section */
+float area;
+
+/* 5. Main Function Section */
+int main(void) {
+    /* Local Variable Declarations */
+    float radius = 5.0;
+
+    /* Executable Statements */
+    area = PI * radius * radius;
+    printf("Calculated Area: %.2f\n", area);
+
+    /* Return Statement */
+    return 0;
+}
+
+/* 6. User-Defined Functions Section (If applicable) */</code></pre>
+
+  <hr>
+
+  <h3>5.2.3 C Preprocessor and Header Files</h3>
+  <p>The <b>C Preprocessor</b> is a macro processor that scans source code before compilation begins. Lines beginning with <code>#</code> are preprocessor directives.</p>
+  <ul>
+    <li><code>#include &lt;stdio.h&gt;</code>: Copies standard Input/Output library declarations into the program.</li>
+    <li><code>#define MACRO_NAME value</code>: Substitutes macro tokens throughout the file before compilation.</li>
+  </ul>
+
+  <hr>
+
+  <h3>5.2.4 Character Set, 5.2.5 Comments, 5.2.6 Tokens, Keywords, and Identifiers</h3>
+  <ul>
+    <li><b>Character Set:</b> Letters (A-Z, a-z), Digits (0-9), Special Symbols (<code>+</code>, <code>-</code>, <code>*</code>, <code>&amp;</code>, <code>%</code>), and Whitespace characters.</li>
+    <li><b>Comments:</b> Ignored by the compiler.
+      <ul>
+        <li>Single-line comment: <code>// comment</code></li>
+        <li>Multi-line comment: <code>/* comment */</code></li>
+      </ul>
+    </li>
+    <li><b>Tokens:</b> The smallest individual units in a program (Keywords, Identifiers, Constants, Strings, Special Symbols, Operators).</li>
+    <li><b>Keywords:</b> Reserved words with predefined meanings (32 standard keywords in C89, e.g., <code>int</code>, <code>return</code>, <code>if</code>, <code>volatile</code>).</li>
+    <li><b>Identifiers:</b> User-defined names for variables, functions, and arrays. Must begin with a letter or underscore.</li>
+  </ul>
+
+  <hr>
+
+  <h3>5.2.7 Basic Data Types, 5.2.8 Constants &amp; Variables, 5.2.9 Format Specifiers</h3>
+  <table border="1" cellpadding="6">
+    <thead>
+      <tr style="background-color: #f2f2f2;">
+        <th>Data Type</th>
+        <th>Keyword</th>
+        <th>Typical Storage Size</th>
+        <th>Format Specifier</th>
+        <th>Sample Range / Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Character</td>
+        <td><code>char</code></td>
+        <td>1 Byte</td>
+        <td><code>%c</code></td>
+        <td>'A', 'z' (-128 to 127)</td>
+      </tr>
+      <tr>
+        <td>Integer</td>
+        <td><code>int</code></td>
+        <td>2 or 4 Bytes</td>
+        <td><code>%d</code> / <code>%i</code></td>
+        <td>-32,768 to 32,767 (16-bit)</td>
+      </tr>
+      <tr>
+        <td>Single-Precision Floating Point</td>
+        <td><code>float</code></td>
+        <td>4 Bytes</td>
+        <td><code>%f</code></td>
+        <td>$3.4 \times 10^{-38}$ to $3.4 \times 10^{38}$</td>
+      </tr>
+      <tr>
+        <td>Double-Precision Floating Point</td>
+        <td><code>double</code></td>
+        <td>8 Bytes</td>
+        <td><code>%lf</code></td>
+        <td>$1.7 \times 10^{-308}$ to $1.7 \times 10^{308}$</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <h3>5.2.10 Simple and Compound Statements</h3>
+  <ul>
+    <li><b>Simple Statement:</b> A single instruction ending with a semicolon: <code>x = 10;</code></li>
+    <li><b>Compound Statement (Block):</b> A group of statements enclosed in curly braces <code>{ ... }</code> executed sequentially.</li>
+  </ul>
+
+  <hr>
+
+  <h3>5.2.11 Operators and Expressions</h3>
+  <p>C provides rich support for operator-driven expressions:</p>
+  <ul>
+    <li><b>Arithmetic:</b> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> (Modulo, yields remainder).</li>
+    <li><b>Relational:</b> <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code> (Evaluates to 1 [true] or 0 [false]).</li>
+    <li><b>Logical:</b> <code>&amp;&amp;</code> (AND), <code>||</code> (OR), <code>!</code> (NOT).</li>
+    <li><b>Assignment:</b> <code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code></li>
+    <li><b>Unary:</b> <code>++</code> (Increment), <code>--</code> (Decrement), <code>sizeof</code></li>
+    <li><b>Conditional (Ternary):</b> <code>expression1 ? expression2 : expression3</code></li>
+  </ul>
+
+  <hr>
+
+  <h3>5.2.12 Input/Output (I/O) Functions</h3>
+  <ul>
+    <li><b>Formatted I/O:</b> <code>printf("format string", variables...)</code>, <code>scanf("format string", &amp;variables...)</code></li>
+    <li><b>Unformatted I/O:</b> <code>getchar()</code>, <code>putchar()</code>, <code>gets()</code> (deprecated), <code>puts()</code>.</li>
+  </ul>
+
+  <hr>
+
+  <h3>5.2.13 Selection Control Statements</h3>
+  <pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int score = 85;
+
+    // if-else-if ladder
+    if (score >= 90) {
+        printf("Grade A\n");
+    } else if (score >= 80) {
+        printf("Grade B\n");
+    } else {
+        printf("Grade C\n");
     }
-  });
-});
-  </code></pre>
+
+    // Switch case selection
+    int category = 2;
+    switch (category) {
+        case 1:
+            printf("Category 1 Selected\n");
+            break;
+        case 2:
+            printf("Category 2 Selected\n");
+            break;
+        default:
+            printf("Invalid Category\n");
+    }
+
+    return 0;
+}</code></pre>
 
   <hr>
 
-  <h3>5.1.4 Web Servers and HTTP Protocols</h3>
-  <p>A <b>Web Server</b> consists of hardware host systems running dedicated software applications (such as Apache, Nginx, or IIS) that process incoming user requests sent via HTTP/HTTPS protocols over TCP/IP networks, delivering requested static pages or rendering dynamic responses.</p>
+  <h3>5.2.14 Iteration Control Statements (Loops)</h3>
+  <pre><code>#include &lt;stdio.h&gt;
 
-  <h4>Key Features & Concepts</h4>
-  <ul>
-    <li><b>HTTP Request Methods:</b> Standard actions including <code>GET</code> (retrieve), <code>POST</code> (submit), <code>PUT</code> (replace), and <code>DELETE</code> (remove).</li>
-    <li><b>HTTP Status Codes:</b> Response categorizations such as 200 (OK), 301 (Redirect), 404 (Not Found), and 500 (Internal Server Error).</li>
-    <li><b>Secure Communication (HTTPS/TLS):</b> Encrypted traffic flows verified through SSL/TLS digital certificate exchanges.</li>
-  </ul>
+int main(void) {
+    int i;
 
-  <h4>Popular Web Servers</h4>
-  <p>Nginx, Apache HTTP Server, Microsoft IIS, LiteSpeed.</p>
+    // 1. For Loop
+    for (i = 0; i &lt; 3; i++) {
+        printf("For Loop i = %d\n", i);
+    }
 
-  <h4>HTTP Request/Response Log Syntax Example</h4>
-  <p>Below is a standard raw HTTP request header format sent by a client browser to a server host system:</p>
+    // 2. While Loop (Entry-Controlled)
+    int j = 0;
+    while (j &lt; 3) {
+        printf("While Loop j = %d\n", j);
+        j++;
+    }
 
-  <pre><code>-- HTTP GET Client Request --
-GET /index.html HTTP/1.1
-Host: www.example.com
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)
-Accept: text/html,application/xhtml+xml
-Connection: keep-alive
+    // 3. Do-While Loop (Exit-Controlled)
+    int k = 0;
+    do {
+        printf("Do-While Loop k = %d\n", k);
+        k++;
+    } while (k &lt; 3);
 
--- HTTP Server Response --
-HTTP/1.1 200 OK
-Date: Tue, 01 Sep 2026 12:00:00 GMT
-Server: Nginx/1.24.0
-Content-Type: text/html; charset=UTF-8
-Content-Length: 428
-  </code></pre>
+    return 0;
+}</code></pre>
 
   <hr>
 
-  <h2>5.2 Internet Applications and Services</h2>
-  <p>Beyond traditional website browsing, the global internet network supports a wide variety of specialized distributed services, messaging architectures, collaboration suites, cloud platforms, and remote computing application environments.</p>
+  <h3>5.2.15 Array Processing &amp; Matrix Operations</h3>
+  <p>An <b>array</b> is a fixed-size collection of homogenous elements stored in contiguous memory locations.</p>
+
+  <h4>2D Matrix Addition and Subtraction Example</h4>
+  <pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int A[2][2] = {{5, 8}, {3, 4}};
+    int B[2][2] = {{1, 2}, {7, 3}};
+    int Sum[2][2], Diff[2][2];
+
+    for (int i = 0; i &lt; 2; i++) {
+        for (int j = 0; j &lt; 2; j++) {
+            Sum[i][j] = A[i][j] + B[i][j];
+            Diff[i][j] = A[i][j] - B[i][j];
+        }
+    }
+
+    printf("Sum Matrix cell [0][0]: %d\n", Sum[0][0]);   // Outputs 6
+    printf("Diff Matrix cell [0][0]: %d\n", Diff[0][0]); // Outputs 4
+
+    return 0;
+}</code></pre>
 
   <hr>
 
-  <h3>5.2.1 Electronic Mail (E-Mail) Architecture</h3>
-  <p>An <b>Electronic Mail (E-Mail) System</b> relies on a series of client applications and transport protocols (SMTP, IMAP, POP3) to transmit structured digital communications asynchronously across public and private IP networks.</p>
+  <h3>5.2.16 String Manipulation and String Functions</h3>
+  <p>In C, a <b>string</b> is a one-dimensional array of characters terminated by a null character (<code>'\0'</code>).</p>
 
-  <h4>Key Protocol Roles</h4>
-  <ul>
-    <li><b>Simple Mail Transfer Protocol (SMTP):</b> Handles outgoing email transmissions between client programs and intermediate mail transfer agents (MTAs).</li>
-    <li><b>Internet Message Access Protocol (IMAP):</b> Synchronizes inbox folders directly across server infrastructure and multiple active client devices.</li>
-    <li><b>Post Office Protocol 3 (POP3):</b> Downloads messages from host servers onto localized client machines, deleting server copies upon completion.</li>
-  </ul>
+  <pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
 
-  <h4>E-Mail Message Header Syntax Example</h4>
-  <pre><code>// Structural MIME Headers of an E-Mail Message
-From: "Administrator" &lt;admin@organization.org&gt;
-To: "User Account" &lt;user@client domain.com&gt;
-Subject: System Maintenance Alert - September 2026
-Date: Tue, 01 Sep 2026 09:30:00 +0545
-Message-ID: &lt;20260901093000.84920.mail@organization.org&gt;
-Content-Type: text/plain; charset="UTF-8"
+int main(void) {
+    char str1[50] = "Hello";
+    char str2[50] = "World";
+    char temp[50];
 
-Notice: Scheduled system maintenance will commence at 22:00 UTC.
-  </code></pre>
+    // 1. strlen() - Length of string
+    printf("Length of str1: %lu\n", strlen(str1)); // 5
 
-  <hr>
+    // 2. strcpy() - Copy string
+    strcpy(temp, str1);
 
-  <h3>5.2.2 Cloud Computing and Storage Services</h3>
-  <p><b>Cloud Computing</b> delivers computing services—including servers, remote storage drives, databases, networking routes, software applications, and operational analytics—over the internet ("the cloud") to offer scalable, pay-as-you-go infrastructure models.</p>
+    // 3. strcat() - Concatenate strings
+    strcat(str1, str2); // str1 becomes "HelloWorld"
+    printf("Concatenated: %s\n", str1);
 
-  <h4>Key Deployment Models</h4>
-  <ul>
-    <li><b>Infrastructure as a Service (IaaS):</b> Renting raw hardware infrastructure, virtual server instances, and storage arrays (e.g., AWS EC2, Google Compute Engine).</li>
-    <li><b>Platform as a Service (PaaS):</b> Providing pre-configured runtime software development environments and deployment pipelines (e.g., Heroku, AWS Elastic Beanstalk).</li>
-    <li><b>Software as a Service (SaaS):</b> On-demand access to fully functional application software host suites (e.g., Google Workspace, Microsoft 365).</li>
-  </ul>
+    // 4. strcmp() - Compare strings lexicographically
+    if (strcmp(temp, "Hello") == 0) {
+        printf("Strings are identical\n");
+    }
 
-  <h4>Cloud Storage Architecture Calculation</h4>
-  <p>Data redundancy reliability across distributed cloud arrays is modeled based on total availability probabilities across $n$ independent node locations:</p>
-
-  $$\text{System Availability} = 1 - \prod_{i=1}^{n} (1 - A_i)$$
-
-  <pre><code># Python Calculation: Cloud Storage Replication Availability Strategy
-def calculate_system_availability(node_availabilities):
-    unavailability_product = 1.0
-    for availability in node_availabilities:
-        unavailability_product *= (1.0 - availability)
-    return 1.0 - unavailability_product
-
-# 3 Replicated Data Center Nodes each offering 99% (0.99) uptime
-nodes = [0.99, 0.99, 0.99]
-total_availability = calculate_system_availability(nodes)
-print(f"Total Cloud Array Availability: {total_availability * 100:.4f}%")
-  </code></pre>
+    // 5. Non-standard extensions (strrev, strlwr, strupr)
+    // Note: strlwr/strupr/strrev exist in standard string.h on POSIX/GNU platforms via lowercase loops:
+    return 0;
+}</code></pre>
 
   <hr>
-
-  <h3>5.2.3 E-Commerce and Digital Payment Systems</h3>
-  <p><b>E-Commerce (Electronic Commerce)</b> refers to the buying, selling, ordering, and exchange of goods, services, or financial transactions over internet-enabled electronic software platforms.</p>
-
-  <h4>Key E-Commerce Models</h4>
-  <ul>
-    <li><b>Business-to-Consumer (B2C):</b> Digital retail storefront transactions conducted directly with end buyers.</li>
-    <li><b>Business-to-Business (B2B):</b> Bulk wholesale supply operations managed between corporate entities.</li>
-    <li><b>Consumer-to-Consumer (C2C):</b> Peer-to-peer auction marketplaces and secondary classified listing boards.</li>
-  </ul>
-
-  <h4>Payment Gateway Integration Syntax Example</h4>
-  <pre><code>// Conceptual JSON Payload for Payment Gateway Transaction API
-{
-  "transaction_id": "TXN-2026-99214",
-  "merchant_id": "MCH_99401",
-  "order_details": {
-    "currency": "NPR",
-    "item_count": 2,
-    "total_amount": 3450.00
-  },
-  "payment_method": {
-    "type": "DIGITAL_WALLET",
-    "provider": "eSewa",
-    "account_token": "TOK_8849201948"
-  },
-  "status": "PROCESSING"
-}
-  </code></pre>
-
-  <hr>
-
-  <h3>5.2.4 Search Engines and Web Crawling</h3>
-  <p>A <b>Search Engine</b> is a specialized web system that systematically scans, indexes, ranks, and retrieves information published across the World Wide Web in response to specific user search queries.</p>
-
-  <h4>Key Operational Phases</h4>
-  <ul>
-    <li><b>Crawling (Web Spiders):</b> Automated bots systematically requesting web pages by following hyperlinks recursively.</li>
-    <li><b>Indexing:</b> Storing extracted keywords, structural document tags, and textual data in optimized inverted index data structures.</li>
-    <li><b>Ranking & Serving:</b> Scoring index entries using relevance algorithms (such as PageRank) to return prioritized results.</li>
-  </ul>
-
-  <h4>Simplified Web Crawler Search Algorithm</h4>
-  <pre><code># Simplified Crawler Algorithm Concept
-def crawl_web_page(starting_url, max_depth=2):
-    visited_urls = set()
-    queue = [(starting_url, 0)]
-
-    while queue:
-        current_url, depth = queue.pop(0)
-        if current_url not in visited_urls and depth <= max_depth:
-            visited_urls.add(current_url)
-            print(f"Crawling URL at Depth {depth}: {current_url}")
-            
-            # Fetch links from parsed page content
-            extracted_links = Fetcher.get_links(current_url)
-            for link in extracted_links:
-                queue.append((link, depth + 1))
-
-crawl_web_page("https://example.com", max_depth=1)
-  </code></pre>
-
 </body>
 </html>
