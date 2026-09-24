@@ -1,0 +1,323 @@
+
+body {
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: #34495e;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 8px;
+  margin-top: 40px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+}
+
+/* ==========================================
+   1. TEXT & FONT PROPERTIES
+=========================================== */
+
+/* color */
+.demo-color {
+  color: #e74c3c;
+}
+
+/* font-family */
+.demo-font-family {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* font-size */
+.demo-font-size {
+  font-size: 26px;
+}
+
+/* font-weight */
+.demo-font-weight {
+  font-weight: 800;
+}
+
+/* font-style */
+.demo-font-style {
+  font-style: italic;
+}
+
+/* text-align */
+.demo-text-align {
+  text-align: right;
+}
+
+/* text-decoration */
+.demo-text-decoration {
+  text-decoration: underline wavy #3498db;
+}
+
+/* line-height */
+.demo-line-height {
+  line-height: 2.8;
+}
+
+/* letter-spacing */
+.demo-letter-spacing {
+  letter-spacing: 6px;
+}
+
+/* text-transform */
+.demo-text-transform {
+  text-transform: uppercase;
+}
+
+
+/* ==========================================
+   2. BOX MODEL & LAYOUT
+=========================================== */
+
+/* width */
+.demo-width {
+  width: 250px;
+  background-color: #e8f8f5;
+  border: 1px dashed #1abc9c;
+}
+
+/* height */
+.demo-height {
+  height: 100px;
+  background-color: #fef9e7;
+  border: 1px dashed #f1c40f;
+}
+
+/* max-width */
+.demo-max-width {
+  max-width: 300px;
+  background-color: #f4ecf7;
+  border: 1px dashed #9b59b6;
+}
+
+/* margin */
+.demo-margin {
+  margin: 30px;
+  background-color: #eaeded;
+  border: 1px solid #95a5a6;
+}
+
+/* padding */
+.demo-padding {
+  padding: 35px;
+  background-color: #ebf5fb;
+  border: 1px solid #3498db;
+}
+
+/* display */
+.demo-display {
+  display: inline-block;
+  width: 180px;
+  padding: 8px;
+  background-color: #eaf2f8;
+  border: 1px solid #2980b9;
+}
+
+/* box-sizing */
+.demo-box-sizing {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px;
+  border: 5px solid #27ae60;
+  background-color: #eafaf1;
+}
+
+/* overflow */
+.demo-overflow {
+  overflow: scroll;
+  height: 50px;
+  border: 1px solid #e67e22;
+  background-color: #fdf2e9;
+  padding: 5px;
+}
+
+
+/* ==========================================
+   3. BACKGROUNDS & COLORS
+=========================================== */
+
+/* background-color */
+.demo-background-color {
+  background-color: #f1948a;
+  color: white;
+}
+
+/* background-image */
+.demo-background-image {
+  background-image: radial-gradient(circle, #3498db, #2c3e50);
+  color: white;
+}
+
+/* background-size */
+.demo-background-size {
+  background-image: url('https://picsum.photos/200/100');
+  background-size: cover;
+  color: white;
+  text-shadow: 1px 1px 3px black;
+}
+
+/* background-position */
+.demo-background-position {
+  background-image: url('https://picsum.photos/400/200');
+  background-position: center bottom;
+  color: white;
+  text-shadow: 1px 1px 3px black;
+}
+
+/* opacity */
+.demo-opacity {
+  opacity: 0.4;
+  background-color: #8e44ad;
+  color: white;
+}
+
+
+/* ==========================================
+   4. BORDERS & EFFECTS
+=========================================== */
+
+/* border */
+.demo-border {
+  border: 4px solid #e67e22;
+}
+
+/* border-radius */
+.demo-border-radius {
+  border: 2px solid #2980b9;
+  border-radius: 20px;
+}
+
+/* box-shadow */
+.demo-box-shadow {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* cursor */
+.demo-cursor {
+  cursor: pointer;
+  background-color: #fcf3cf;
+}
+
+
+/* ==========================================
+   5. FLEXBOX & GRID
+=========================================== */
+
+/* flex-direction */
+.demo-flex-direction {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.demo-flex-direction div {
+  background: #e1f5fe;
+  padding: 5px;
+}
+
+/* justify-content */
+.demo-justify-content {
+  display: flex;
+  justify-content: space-between;
+  background: #ede7f6;
+  padding: 10px;
+}
+
+/* align-items */
+.demo-align-items {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  background: #e0f2f1;
+}
+
+/* gap */
+.demo-gap {
+  display: flex;
+  gap: 25px;
+  background: #fff3e0;
+  padding: 10px;
+}
+.demo-gap div {
+  background: #ffe0b2;
+  padding: 5px;
+}
+
+/* grid-template-columns */
+.demo-grid-template-columns {
+  display: grid;
+  grid-template-columns: 80px 80px 80px 1fr;
+  gap: 10px;
+  background: #fce4ec;
+  padding: 10px;
+}
+.demo-grid-template-columns div {
+  background: #f8bbd0;
+  padding: 5px;
+}
+
+
+/* ==========================================
+   6. ADVANCED & INTERACTIVE
+=========================================== */
+
+/* transition */
+.demo-transition {
+  background-color: #3498db;
+  color: white;
+  transition: background-color 0.5s ease;
+}
+.demo-transition:hover {
+  background-color: #2ecc71;
+}
+
+/* transform */
+.demo-transform {
+  display: inline-block;
+  transform: scale(1.02) rotate(-1deg);
+  background-color: #f39c12;
+  color: white;
+  padding: 10px;
+}
+
+/* z-index */
+.demo-z-index-container {
+  position: relative;
+  height: 60px;
+}
+.demo-z-index-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #bdc3c7;
+  padding: 10px;
+  z-index: 1;
+}
+.demo-z-index-2 {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  background: #e74c3c;
+  color: white;
+  padding: 10px;
+  z-index: 2;
+}
